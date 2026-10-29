@@ -5,3 +5,6 @@
 venv/
 .env
 .ipynb_checkpoints/
+# Reports and generated experiment outputs
+Phase1_Report_CoDExM/
+outputs/
