@@ -1,0 +1,8 @@
+metric,formula,v1_numerator,v1_denominator,v1_value,v2_numerator,v2_denominator,v2_value,better
+benchmark precision,TP/(TP+FP),257,270,0.951852,278,291,0.955326,v2
+benchmark recall,TP/|test positives|,257,10311,0.024925,278,10311,0.026961,v2
+benchmark F1,2TP/(2TP+FP+FN),514,10581,0.048578,556,10602,0.052443,v2
+specificity,TN/|supplied negatives|,10298,10311,0.998739,10298,10311,0.998739,tie
+labelled coverage,(TP+FP)/|predictions|,270,3239,0.083359,291,3239,0.089843,v2
+positive hit rate (lower bound),TP/|predictions|,257,3239,0.079345,278,3239,0.085829,v2
+recall ceiling under cap,"Σ min(pred_r, pos_r)/|test positives|",2468,10311,0.239356,2468,10311,0.239356,tie

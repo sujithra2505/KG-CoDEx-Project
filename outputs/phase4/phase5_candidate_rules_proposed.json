@@ -1,0 +1,2287 @@
+{
+  "status": "PROPOSED - not approved for Phase 5 yet",
+  "source_run": "outputs/phase4/run_grid_ext",
+  "source_selected_rules_sha256": "5c4b51e31ed23201aea1d62787e93aff5798906593affc98d3742ffe2fdfcd51",
+  "thresholds": {
+    "min_pca": 0.1,
+    "min_support": 10
+  },
+  "adopted_looser_point": false,
+  "excluded_rules": {
+    "49": {
+      "rule_id": "255733fa4a1f34da",
+      "rule": "P138(y,x) & P138(y,z) => P3373(x,z)"
+    },
+    "65": {
+      "rule_id": "50a7753def0f70b1",
+      "rule": "P140(x,y) & P3095(y,z) => P172(x,z)"
+    },
+    "69": {
+      "rule_id": "3a731ebe7cec23c4",
+      "rule": "P172(x,y) & P3095(z,y) => P140(x,z)"
+    },
+    "145": {
+      "rule_id": "58d15d7e0233a672",
+      "rule": "P17(x,y) & P159(y,z) => P17(x,z)"
+    },
+    "160": {
+      "rule_id": "b88d9866081e221e",
+      "rule": "P749(x,y) & P159(y,z) => P159(x,z)"
+    },
+    "166": {
+      "rule_id": "fd8bcb03de8f3a9c",
+      "rule": "P264(y,x) & P740(y,z) => P159(x,z)"
+    }
+  },
+  "scoring": "miner 4B.2.0, symmetric_unit=unordered",
+  "baseline_preserved": "outputs/phase4/run_default (166 rules, unchanged)",
+  "note": "Rule list only. Statistical patterns from training data; no inferred or predicted edges.",
+  "rules": [
+    {
+      "rule_id": "4893501eaeced821",
+      "rule": "P40(y,x) & P40(y,z) => P3373(x,z)",
+      "display": "∀x,y,z: child [P40](y,x) ∧ child [P40](y,z) → sibling [P3373](x,z)",
+      "head": "P3373",
+      "type": "composition_reversed",
+      "support": 127,
+      "pca_confidence": 0.992188,
+      "wilson_lower": 0.957073,
+      "counting": "unordered_couples",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "0ec080cf9fb21e46",
+      "rule": "P26(z,x) => P26(x,z)",
+      "display": "∀x,y,z: spouse [P26](z,x) → spouse [P26](x,z)",
+      "head": "P26",
+      "type": "symmetry",
+      "support": 335,
+      "pca_confidence": 0.946328,
+      "wilson_lower": 0.917699,
+      "counting": "unordered_couples",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "816955218ff4c2a0",
+      "rule": "P40(x,y) & P40(z,y) => P26(x,z)",
+      "display": "∀x,y,z: child [P40](x,y) ∧ child [P40](z,y) → spouse [P26](x,z)",
+      "head": "P26",
+      "type": "composition_reversed",
+      "support": 36,
+      "pca_confidence": 1.0,
+      "wilson_lower": 0.903578,
+      "counting": "unordered_couples",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "bfe3ea8368bc3b0b",
+      "rule": "P40(x,y) & P3373(z,y) => P40(x,z)",
+      "display": "∀x,y,z: child [P40](x,y) ∧ sibling [P3373](z,y) → child [P40](x,z)",
+      "head": "P40",
+      "type": "composition_reversed",
+      "support": 109,
+      "pca_confidence": 0.947826,
+      "wilson_lower": 0.890828,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "789b73c97cec8a95",
+      "rule": "P3373(x,y) & P3373(z,y) => P3373(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ sibling [P3373](z,y) → sibling [P3373](x,z)",
+      "head": "P3373",
+      "type": "composition_reversed",
+      "support": 240,
+      "pca_confidence": 0.926641,
+      "wilson_lower": 0.888274,
+      "counting": "unordered_couples",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "088a6b466a3efe2d",
+      "rule": "P69(x,y) & P17(y,z) => P27(x,z)",
+      "display": "∀x,y,z: educated at [P69](x,y) ∧ country [P17](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 543,
+      "pca_confidence": 0.840557,
+      "wilson_lower": 0.810325,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "0bf8952a88ea27ad",
+      "rule": "P451(z,x) => P451(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](z,x) → unmarried partner [P451](x,z)",
+      "head": "P451",
+      "type": "symmetry",
+      "support": 144,
+      "pca_confidence": 0.86747,
+      "wilson_lower": 0.807491,
+      "counting": "unordered_couples",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "026fa8b9395ea859",
+      "rule": "P3373(z,x) => P3373(x,z)",
+      "display": "∀x,y,z: sibling [P3373](z,x) → sibling [P3373](x,z)",
+      "head": "P3373",
+      "type": "symmetry",
+      "support": 310,
+      "pca_confidence": 0.846995,
+      "wilson_lower": 0.806524,
+      "counting": "unordered_couples",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "04b88a0cb8f6b06a",
+      "rule": "P20(x,y) & P37(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: place of death [P20](x,y) ∧ official language [P37](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 643,
+      "pca_confidence": 0.811869,
+      "wilson_lower": 0.783169,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "9e87316e4ee6e8ed",
+      "rule": "P530(z,x) => P530(x,z)",
+      "display": "∀x,y,z: diplomatic relation [P530](z,x) → diplomatic relation [P530](x,z)",
+      "head": "P530",
+      "type": "symmetry",
+      "support": 2472,
+      "pca_confidence": 0.784264,
+      "wilson_lower": 0.769562,
+      "counting": "unordered_couples",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "ac53f4b41295872c",
+      "rule": "P740(y,x) & P495(y,z) => P17(x,z)",
+      "display": "∀x,y,z: location of formation [P740](y,x) ∧ country of origin [P495](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 24,
+      "pca_confidence": 0.923077,
+      "wilson_lower": 0.758581,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "01c619498fc8b9dd",
+      "rule": "P3373(x,y) & P172(y,z) => P172(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ ethnic group [P172](y,z) → ethnic group [P172](x,z)",
+      "head": "P172",
+      "type": "composition_chain",
+      "support": 33,
+      "pca_confidence": 0.891892,
+      "wilson_lower": 0.752912,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "3298fc2faf93542a",
+      "rule": "P19(x,y) & P37(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: place of birth [P19](x,y) ∧ official language [P37](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 517,
+      "pca_confidence": 0.765926,
+      "wilson_lower": 0.732533,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "5cda91ee7da23685",
+      "rule": "P3373(y,x) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: sibling [P3373](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_reversed",
+      "support": 206,
+      "pca_confidence": 0.780303,
+      "wilson_lower": 0.726534,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "6df25691da461aa1",
+      "rule": "P57(x,y) & P27(y,z) => P495(x,z)",
+      "display": "∀x,y,z: director [P57](x,y) ∧ country of citizenship [P27](y,z) → country of origin [P495](x,z)",
+      "head": "P495",
+      "type": "composition_chain",
+      "support": 330,
+      "pca_confidence": 0.760369,
+      "wilson_lower": 0.718035,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "036bd9b8c5b080ef",
+      "rule": "P3373(x,y) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 205,
+      "pca_confidence": 0.770677,
+      "wilson_lower": 0.716515,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "3de0ab0e754229fa",
+      "rule": "P159(y,x) & P17(y,z) => P17(x,z)",
+      "display": "∀x,y,z: headquarters location [P159](y,x) ∧ country [P17](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 45,
+      "pca_confidence": 0.833333,
+      "wilson_lower": 0.712632,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "abde3e0fdaf58e56",
+      "rule": "P740(y,x) & P27(y,z) => P17(x,z)",
+      "display": "∀x,y,z: location of formation [P740](y,x) ∧ country of citizenship [P27](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 19,
+      "pca_confidence": 0.904762,
+      "wilson_lower": 0.710854,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "3acaf6a684d06d0b",
+      "rule": "P3373(y,x) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: sibling [P3373](y,x) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_reversed",
+      "support": 316,
+      "pca_confidence": 0.724771,
+      "wilson_lower": 0.681021,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "0823d5573c212217",
+      "rule": "P26(x,y) & P40(y,z) => P40(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,y) ∧ child [P40](y,z) → child [P40](x,z)",
+      "head": "P40",
+      "type": "composition_chain",
+      "support": 89,
+      "pca_confidence": 0.760684,
+      "wilson_lower": 0.675873,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "9398ab18a406085f",
+      "rule": "P131(y,x) & P30(y,z) => P30(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](y,x) ∧ continent [P30](y,z) → continent [P30](x,z)",
+      "head": "P30",
+      "type": "composition_reversed",
+      "support": 26,
+      "pca_confidence": 0.83871,
+      "wilson_lower": 0.673653,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "57aa3737945823c0",
+      "rule": "P3373(x,y) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 316,
+      "pca_confidence": 0.713318,
+      "wilson_lower": 0.669515,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "85b64a9860d92b3a",
+      "rule": "P3373(y,x) & P102(y,z) => P102(x,z)",
+      "display": "∀x,y,z: sibling [P3373](y,x) ∧ member of political party [P102](y,z) → member of political party [P102](x,z)",
+      "head": "P102",
+      "type": "composition_reversed",
+      "support": 37,
+      "pca_confidence": 0.804348,
+      "wilson_lower": 0.668285,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b6d811ce3250fa97",
+      "rule": "P3373(x,y) & P102(y,z) => P102(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ member of political party [P102](y,z) → member of political party [P102](x,z)",
+      "head": "P102",
+      "type": "composition_chain",
+      "support": 37,
+      "pca_confidence": 0.804348,
+      "wilson_lower": 0.668285,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "e04c2677af5e0442",
+      "rule": "P26(y,x) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_reversed",
+      "support": 344,
+      "pca_confidence": 0.709278,
+      "wilson_lower": 0.667345,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b5150b5fce4d621e",
+      "rule": "P112(x,y) & P27(y,z) => P17(x,z)",
+      "display": "∀x,y,z: founded by [P112](x,y) ∧ country of citizenship [P27](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_chain",
+      "support": 28,
+      "pca_confidence": 0.823529,
+      "wilson_lower": 0.664859,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "1f8bfb55b3fecd19",
+      "rule": "P3373(x,y) & P19(y,z) => P19(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ place of birth [P19](y,z) → place of birth [P19](x,z)",
+      "head": "P19",
+      "type": "composition_chain",
+      "support": 136,
+      "pca_confidence": 0.731183,
+      "wilson_lower": 0.663264,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "466fb6da5562f9ea",
+      "rule": "P3373(y,x) & P19(y,z) => P19(x,z)",
+      "display": "∀x,y,z: sibling [P3373](y,x) ∧ place of birth [P19](y,z) → place of birth [P19](x,z)",
+      "head": "P19",
+      "type": "composition_reversed",
+      "support": 136,
+      "pca_confidence": 0.731183,
+      "wilson_lower": 0.663264,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "54c8ec64ac3632a8",
+      "rule": "P26(y,x) & P40(y,z) => P40(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ child [P40](y,z) → child [P40](x,z)",
+      "head": "P40",
+      "type": "composition_reversed",
+      "support": 89,
+      "pca_confidence": 0.747899,
+      "wilson_lower": 0.662969,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b4aae18b829f395e",
+      "rule": "P26(x,y) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,y) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 341,
+      "pca_confidence": 0.697342,
+      "wilson_lower": 0.655214,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "021bffd400b47d8e",
+      "rule": "P159(x,z) => P131(x,z)",
+      "display": "∀x,y,z: headquarters location [P159](x,z) → located in the administrative terroritorial entity [P131](x,z)",
+      "head": "P131",
+      "type": "subrelation",
+      "support": 24,
+      "pca_confidence": 0.827586,
+      "wilson_lower": 0.654512,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "d038ac9552cc3e05",
+      "rule": "P40(x,y) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: child [P40](x,y) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 153,
+      "pca_confidence": 0.711628,
+      "wilson_lower": 0.647778,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "5ec7c2314ef85fd6",
+      "rule": "P451(y,x) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_reversed",
+      "support": 165,
+      "pca_confidence": 0.708155,
+      "wilson_lower": 0.646781,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b4a4792f9e0c8954",
+      "rule": "P27(x,y) & P37(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: country of citizenship [P27](x,y) ∧ official language [P37](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 7887,
+      "pca_confidence": 0.652681,
+      "wilson_lower": 0.644145,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "470393424a1e534c",
+      "rule": "P40(x,y) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: child [P40](x,y) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 227,
+      "pca_confidence": 0.68997,
+      "wilson_lower": 0.63804,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "1897968da4a52649",
+      "rule": "P451(x,y) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](x,y) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 158,
+      "pca_confidence": 0.692982,
+      "wilson_lower": 0.630324,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "8f5f42cef25fe087",
+      "rule": "P131(x,z) => P159(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](x,z) → headquarters location [P159](x,z)",
+      "head": "P159",
+      "type": "subrelation",
+      "support": 24,
+      "pca_confidence": 0.8,
+      "wilson_lower": 0.62694,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "e5b519734052f0f1",
+      "rule": "P40(y,x) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: child [P40](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_reversed",
+      "support": 151,
+      "pca_confidence": 0.689498,
+      "wilson_lower": 0.625392,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "338d3207cd972e4e",
+      "rule": "P26(x,y) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,y) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 522,
+      "pca_confidence": 0.650062,
+      "wilson_lower": 0.616429,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "59be82296fc5585b",
+      "rule": "P26(y,x) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_reversed",
+      "support": 526,
+      "pca_confidence": 0.645399,
+      "wilson_lower": 0.611942,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "88046db0f77cda4b",
+      "rule": "P40(y,x) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: child [P40](y,x) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_reversed",
+      "support": 240,
+      "pca_confidence": 0.653951,
+      "wilson_lower": 0.603912,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "f7a28730c128432f",
+      "rule": "P264(x,y) & P17(y,z) => P27(x,z)",
+      "display": "∀x,y,z: record label [P264](x,y) ∧ country [P17](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 1077,
+      "pca_confidence": 0.601676,
+      "wilson_lower": 0.578802,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "f38b9c798f7428a7",
+      "rule": "P17(y,x) & P30(y,z) => P30(x,z)",
+      "display": "∀x,y,z: country [P17](y,x) ∧ continent [P30](y,z) → continent [P30](x,z)",
+      "head": "P30",
+      "type": "composition_reversed",
+      "support": 72,
+      "pca_confidence": 0.66055,
+      "wilson_lower": 0.567544,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "2c1c0881f84a3211",
+      "rule": "P40(x,y) & P102(y,z) => P102(x,z)",
+      "display": "∀x,y,z: child [P40](x,y) ∧ member of political party [P102](y,z) → member of political party [P102](x,z)",
+      "head": "P102",
+      "type": "composition_chain",
+      "support": 35,
+      "pca_confidence": 0.7,
+      "wilson_lower": 0.562494,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "92243c5f346eb3e2",
+      "rule": "P749(x,y) & P17(y,z) => P17(x,z)",
+      "display": "∀x,y,z: parent organization [P749](x,y) ∧ country [P17](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_chain",
+      "support": 36,
+      "pca_confidence": 0.692308,
+      "wilson_lower": 0.557302,
+      "counting": "ordered_pairs",
+      "flags": {
+        "hub_dominated": "Q38903",
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "87e5c22ff351113e",
+      "rule": "P451(y,x) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](y,x) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_reversed",
+      "support": 202,
+      "pca_confidence": 0.59587,
+      "wilson_lower": 0.54284,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "374fe9feca3be9f3",
+      "rule": "P26(y,x) & P102(y,z) => P102(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ member of political party [P102](y,z) → member of political party [P102](x,z)",
+      "head": "P102",
+      "type": "composition_reversed",
+      "support": 65,
+      "pca_confidence": 0.637255,
+      "wilson_lower": 0.54054,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "6db34359c330614b",
+      "rule": "P551(x,y) & P37(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: residence [P551](x,y) ∧ official language [P37](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 164,
+      "pca_confidence": 0.596364,
+      "wilson_lower": 0.537433,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "ba0916b9ff8c591a",
+      "rule": "P131(x,y) & P30(y,z) => P30(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](x,y) ∧ continent [P30](y,z) → continent [P30](x,z)",
+      "head": "P30",
+      "type": "composition_chain",
+      "support": 28,
+      "pca_confidence": 0.682927,
+      "wilson_lower": 0.530155,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "af4e3b73b1363094",
+      "rule": "P451(x,y) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](x,y) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 197,
+      "pca_confidence": 0.579412,
+      "wilson_lower": 0.526338,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "4b39dad65fda30ce",
+      "rule": "P26(x,y) & P102(y,z) => P102(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,y) ∧ member of political party [P102](y,z) → member of political party [P102](x,z)",
+      "head": "P102",
+      "type": "composition_chain",
+      "support": 64,
+      "pca_confidence": 0.615385,
+      "wilson_lower": 0.51936,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "6cfa7273578ae776",
+      "rule": "P1050(x,z) => P509(x,z)",
+      "display": "∀x,y,z: medical condition [P1050](x,z) → cause of death [P509](x,z)",
+      "head": "P509",
+      "type": "subrelation",
+      "support": 114,
+      "pca_confidence": 0.584615,
+      "wilson_lower": 0.514466,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "37d72df4ce01d370",
+      "rule": "P17(y,x) & P37(y,z) => P37(x,z)",
+      "display": "∀x,y,z: country [P17](y,x) ∧ official language [P37](y,z) → official language [P37](x,z)",
+      "head": "P37",
+      "type": "composition_reversed",
+      "support": 56,
+      "pca_confidence": 0.608696,
+      "wilson_lower": 0.506532,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "0f772ebe7aded4d8",
+      "rule": "P3373(x,y) & P119(y,z) => P119(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ place of burial [P119](y,z) → place of burial [P119](x,z)",
+      "head": "P119",
+      "type": "composition_chain",
+      "support": 18,
+      "pca_confidence": 0.666667,
+      "wilson_lower": 0.478244,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "d617f1cf864268c6",
+      "rule": "P40(y,x) & P102(y,z) => P102(x,z)",
+      "display": "∀x,y,z: child [P40](y,x) ∧ member of political party [P102](y,z) → member of political party [P102](x,z)",
+      "head": "P102",
+      "type": "composition_reversed",
+      "support": 33,
+      "pca_confidence": 0.611111,
+      "wilson_lower": 0.477881,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "534d549b74770068",
+      "rule": "P131(x,y) & P37(y,z) => P37(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](x,y) ∧ official language [P37](y,z) → official language [P37](x,z)",
+      "head": "P37",
+      "type": "composition_chain",
+      "support": 19,
+      "pca_confidence": 0.655172,
+      "wilson_lower": 0.473448,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "f89359e9375b5fc7",
+      "rule": "P740(y,x) & P17(y,z) => P17(x,z)",
+      "display": "∀x,y,z: location of formation [P740](y,x) ∧ country [P17](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 16,
+      "pca_confidence": 0.666667,
+      "wilson_lower": 0.46706,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "7f0e6e059966f9f2",
+      "rule": "P131(y,x) & P17(y,z) => P17(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](y,x) ∧ country [P17](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 42,
+      "pca_confidence": 0.56,
+      "wilson_lower": 0.447466,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "cf37a1458f7b34ad",
+      "rule": "P131(y,x) & P37(y,z) => P37(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](y,x) ∧ official language [P37](y,z) → official language [P37](x,z)",
+      "head": "P37",
+      "type": "composition_reversed",
+      "support": 21,
+      "pca_confidence": 0.583333,
+      "wilson_lower": 0.422,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "8ac4937eaa168eb4",
+      "rule": "P26(y,x) & P1303(y,z) => P1303(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ instrument [P1303](y,z) → instrument [P1303](x,z)",
+      "head": "P1303",
+      "type": "composition_reversed",
+      "support": 94,
+      "pca_confidence": 0.487047,
+      "wilson_lower": 0.417472,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "d736e0741ba24cc3",
+      "rule": "P57(y,x) & P495(y,z) => P27(x,z)",
+      "display": "∀x,y,z: director [P57](y,x) ∧ country of origin [P495](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_reversed",
+      "support": 153,
+      "pca_confidence": 0.470769,
+      "wilson_lower": 0.41716,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "80d2eed22413cd6e",
+      "rule": "P20(x,z) => P551(x,z)",
+      "display": "∀x,y,z: place of death [P20](x,z) → residence [P551](x,z)",
+      "head": "P551",
+      "type": "subrelation",
+      "support": 128,
+      "pca_confidence": 0.468864,
+      "wilson_lower": 0.41051,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "35e20c67e71d7dca",
+      "rule": "P119(y,x) & P27(y,z) => P17(x,z)",
+      "display": "∀x,y,z: place of burial [P119](y,x) ∧ country of citizenship [P27](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 67,
+      "pca_confidence": 0.492647,
+      "wilson_lower": 0.409986,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "608f5bde4950eed0",
+      "rule": "P17(x,y) & P37(y,z) => P37(x,z)",
+      "display": "∀x,y,z: country [P17](x,y) ∧ official language [P37](y,z) → official language [P37](x,z)",
+      "head": "P37",
+      "type": "composition_chain",
+      "support": 63,
+      "pca_confidence": 0.492188,
+      "wilson_lower": 0.407076,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "09e7898a3ed3566a",
+      "rule": "P161(x,y) & P27(y,z) => P495(x,z)",
+      "display": "∀x,y,z: cast member [P161](x,y) ∧ country of citizenship [P27](y,z) → country of origin [P495](x,z)",
+      "head": "P495",
+      "type": "composition_chain",
+      "support": 1259,
+      "pca_confidence": 0.424049,
+      "wilson_lower": 0.406381,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "12637e7cacad39da",
+      "rule": "P463(x,y) & P17(y,z) => P27(x,z)",
+      "display": "∀x,y,z: member of [P463](x,y) ∧ country [P17](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 1413,
+      "pca_confidence": 0.417307,
+      "wilson_lower": 0.4008,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "2ae33cdc2f4fac0c",
+      "rule": "P26(x,y) & P1303(y,z) => P1303(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,y) ∧ instrument [P1303](y,z) → instrument [P1303](x,z)",
+      "head": "P1303",
+      "type": "composition_chain",
+      "support": 92,
+      "pca_confidence": 0.469388,
+      "wilson_lower": 0.40078,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "711d156824a403e6",
+      "rule": "P40(x,y) & P19(y,z) => P551(x,z)",
+      "display": "∀x,y,z: child [P40](x,y) ∧ place of birth [P19](y,z) → residence [P551](x,z)",
+      "head": "P551",
+      "type": "composition_chain",
+      "support": 19,
+      "pca_confidence": 0.558824,
+      "wilson_lower": 0.394536,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b70eabc122794571",
+      "rule": "P3373(y,x) & P140(y,z) => P140(x,z)",
+      "display": "∀x,y,z: sibling [P3373](y,x) ∧ religion [P140](y,z) → religion [P140](x,z)",
+      "head": "P140",
+      "type": "composition_reversed",
+      "support": 31,
+      "pca_confidence": 0.508197,
+      "wilson_lower": 0.386024,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "51c46cbd9c39e0b7",
+      "rule": "P26(y,x) & P119(y,z) => P119(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ place of burial [P119](y,z) → place of burial [P119](x,z)",
+      "head": "P119",
+      "type": "composition_reversed",
+      "support": 26,
+      "pca_confidence": 0.509804,
+      "wilson_lower": 0.376807,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "6d09acc9f44b5493",
+      "rule": "P3373(y,x) & P106(y,z) => P106(x,z)",
+      "display": "∀x,y,z: sibling [P3373](y,x) ∧ occupation [P106](y,z) → occupation [P106](x,z)",
+      "head": "P106",
+      "type": "composition_reversed",
+      "support": 865,
+      "pca_confidence": 0.393898,
+      "wilson_lower": 0.373664,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "bcad67c74e968f9c",
+      "rule": "P3373(x,y) & P106(y,z) => P106(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ occupation [P106](y,z) → occupation [P106](x,z)",
+      "head": "P106",
+      "type": "composition_chain",
+      "support": 864,
+      "pca_confidence": 0.393622,
+      "wilson_lower": 0.373386,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "7dfadfdc539cb1bc",
+      "rule": "P19(x,z) => P551(x,z)",
+      "display": "∀x,y,z: place of birth [P19](x,z) → residence [P551](x,z)",
+      "head": "P551",
+      "type": "subrelation",
+      "support": 284,
+      "pca_confidence": 0.408046,
+      "wilson_lower": 0.372134,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "04d1160d3a25843f",
+      "rule": "P161(y,x) & P495(y,z) => P27(x,z)",
+      "display": "∀x,y,z: cast member [P161](y,x) ∧ country of origin [P495](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_reversed",
+      "support": 1846,
+      "pca_confidence": 0.384183,
+      "wilson_lower": 0.370528,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "fd2870e3a47af3f0",
+      "rule": "P737(y,x) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_reversed",
+      "support": 384,
+      "pca_confidence": 0.400417,
+      "wilson_lower": 0.369862,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "58fb82cccbbb2616",
+      "rule": "P737(x,y) & P1303(y,z) => P1303(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ instrument [P1303](y,z) → instrument [P1303](x,z)",
+      "head": "P1303",
+      "type": "composition_chain",
+      "support": 85,
+      "pca_confidence": 0.433673,
+      "wilson_lower": 0.366225,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "ab7f05cd654ffdf6",
+      "rule": "P26(x,y) & P172(y,z) => P172(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,y) ∧ ethnic group [P172](y,z) → ethnic group [P172](x,z)",
+      "head": "P172",
+      "type": "composition_chain",
+      "support": 28,
+      "pca_confidence": 0.491228,
+      "wilson_lower": 0.366161,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "e815967a068f8a9b",
+      "rule": "P26(y,x) & P172(y,z) => P172(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ ethnic group [P172](y,z) → ethnic group [P172](x,z)",
+      "head": "P172",
+      "type": "composition_reversed",
+      "support": 28,
+      "pca_confidence": 0.491228,
+      "wilson_lower": 0.366161,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "7e1d358ed1456d9b",
+      "rule": "P26(x,y) & P106(y,z) => P106(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,y) ∧ occupation [P106](y,z) → occupation [P106](x,z)",
+      "head": "P106",
+      "type": "composition_chain",
+      "support": 1549,
+      "pca_confidence": 0.375788,
+      "wilson_lower": 0.361125,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "98dc14179c65e613",
+      "rule": "P57(x,z) => P161(x,z)",
+      "display": "∀x,y,z: director [P57](x,z) → cast member [P161](x,z)",
+      "head": "P161",
+      "type": "subrelation",
+      "support": 118,
+      "pca_confidence": 0.415493,
+      "wilson_lower": 0.359678,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "297cbd8b8d527712",
+      "rule": "P737(x,y) & P1412(y,z) => P1412(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ languages spoken, written, or signed [P1412](y,z) → languages spoken, written, or signed [P1412](x,z)",
+      "head": "P1412",
+      "type": "composition_chain",
+      "support": 341,
+      "pca_confidence": 0.391504,
+      "wilson_lower": 0.359633,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "e5975c3a63b0d092",
+      "rule": "P26(y,x) & P106(y,z) => P106(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ occupation [P106](y,z) → occupation [P106](x,z)",
+      "head": "P106",
+      "type": "composition_reversed",
+      "support": 1555,
+      "pca_confidence": 0.373708,
+      "wilson_lower": 0.359131,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "7147746ba901bbcc",
+      "rule": "P27(y,x) & P27(y,z) => P530(x,z)",
+      "display": "∀x,y,z: country of citizenship [P27](y,x) ∧ country of citizenship [P27](y,z) → diplomatic relation [P530](x,z)",
+      "head": "P530",
+      "type": "composition_reversed",
+      "support": 303,
+      "pca_confidence": 0.392487,
+      "wilson_lower": 0.358655,
+      "counting": "unordered_couples",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "26b49e259a36391e",
+      "rule": "P840(x,y) & P17(y,z) => P495(x,z)",
+      "display": "∀x,y,z: narrative location [P840](x,y) ∧ country [P17](y,z) → country of origin [P495](x,z)",
+      "head": "P495",
+      "type": "composition_chain",
+      "support": 504,
+      "pca_confidence": 0.381818,
+      "wilson_lower": 0.355988,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "f881e2349a51fef0",
+      "rule": "P451(y,x) & P106(y,z) => P106(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](y,x) ∧ occupation [P106](y,z) → occupation [P106](x,z)",
+      "head": "P106",
+      "type": "composition_reversed",
+      "support": 773,
+      "pca_confidence": 0.374697,
+      "wilson_lower": 0.35406,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "a3436a894580700d",
+      "rule": "P737(y,x) & P1303(y,z) => P1303(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ instrument [P1303](y,z) → instrument [P1303](x,z)",
+      "head": "P1303",
+      "type": "composition_reversed",
+      "support": 89,
+      "pca_confidence": 0.41784,
+      "wilson_lower": 0.353633,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "20118998861311d9",
+      "rule": "P451(x,y) & P106(y,z) => P106(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](x,y) ∧ occupation [P106](y,z) → occupation [P106](x,z)",
+      "head": "P106",
+      "type": "composition_chain",
+      "support": 753,
+      "pca_confidence": 0.373512,
+      "wilson_lower": 0.352655,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "353e0dbbc36ba5ae",
+      "rule": "P3373(x,y) & P1303(y,z) => P1303(x,z)",
+      "display": "∀x,y,z: sibling [P3373](x,y) ∧ instrument [P1303](y,z) → instrument [P1303](x,z)",
+      "head": "P1303",
+      "type": "composition_chain",
+      "support": 59,
+      "pca_confidence": 0.42446,
+      "wilson_lower": 0.345411,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "cd5381132d78ff69",
+      "rule": "P19(y,x) & P27(y,z) => P17(x,z)",
+      "display": "∀x,y,z: place of birth [P19](y,x) ∧ country of citizenship [P27](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 441,
+      "pca_confidence": 0.365066,
+      "wilson_lower": 0.338383,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "152269b613cb503b",
+      "rule": "P740(x,y) & P17(y,z) => P495(x,z)",
+      "display": "∀x,y,z: location of formation [P740](x,y) ∧ country [P17](y,z) → country of origin [P495](x,z)",
+      "head": "P495",
+      "type": "composition_chain",
+      "support": 38,
+      "pca_confidence": 0.436782,
+      "wilson_lower": 0.337424,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "08af3667b20cca8a",
+      "rule": "P3373(y,x) & P1303(y,z) => P1303(x,z)",
+      "display": "∀x,y,z: sibling [P3373](y,x) ∧ instrument [P1303](y,z) → instrument [P1303](x,z)",
+      "head": "P1303",
+      "type": "composition_reversed",
+      "support": 59,
+      "pca_confidence": 0.406897,
+      "wilson_lower": 0.33034,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "53e92a9e4b7205c3",
+      "rule": "P131(x,z) => P17(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](x,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "subrelation",
+      "support": 63,
+      "pca_confidence": 0.391304,
+      "wilson_lower": 0.31929,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "6f2cbef3cdd33c2a",
+      "rule": "P27(x,y) & P172(y,z) => P172(x,z)",
+      "display": "∀x,y,z: country of citizenship [P27](x,y) ∧ ethnic group [P172](y,z) → ethnic group [P172](x,z)",
+      "head": "P172",
+      "type": "composition_chain",
+      "support": 725,
+      "pca_confidence": 0.333947,
+      "wilson_lower": 0.314417,
+      "counting": "ordered_pairs",
+      "flags": {
+        "hub_dominated": "Q30",
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b228548e1425e493",
+      "rule": "P463(x,y) & P264(y,z) => P264(x,z)",
+      "display": "∀x,y,z: member of [P463](x,y) ∧ record label [P264](y,z) → record label [P264](x,z)",
+      "head": "P264",
+      "type": "composition_chain",
+      "support": 48,
+      "pca_confidence": 0.390244,
+      "wilson_lower": 0.30861,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "5e84b6a552d5e781",
+      "rule": "P19(x,y) & P17(y,z) => P27(x,z)",
+      "display": "∀x,y,z: place of birth [P19](x,y) ∧ country [P17](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 4506,
+      "pca_confidence": 0.314138,
+      "wilson_lower": 0.306593,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "61d2e805e3da20a5",
+      "rule": "P551(y,x) & P27(y,z) => P17(x,z)",
+      "display": "∀x,y,z: residence [P551](y,x) ∧ country of citizenship [P27](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 213,
+      "pca_confidence": 0.341894,
+      "wilson_lower": 0.305716,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "3fbc5b6878528e1f",
+      "rule": "P551(x,y) & P17(y,z) => P27(x,z)",
+      "display": "∀x,y,z: residence [P551](x,y) ∧ country [P17](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 855,
+      "pca_confidence": 0.323251,
+      "wilson_lower": 0.305694,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "58dce90dbd94a359",
+      "rule": "P530(y,x) & P463(y,z) => P463(x,z)",
+      "display": "∀x,y,z: diplomatic relation [P530](y,x) ∧ member of [P463](y,z) → member of [P463](x,z)",
+      "head": "P463",
+      "type": "composition_reversed",
+      "support": 3339,
+      "pca_confidence": 0.308709,
+      "wilson_lower": 0.300072,
+      "counting": "ordered_pairs",
+      "flags": {
+        "hub_dominated": "Q183",
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "44c47206d439faf3",
+      "rule": "P740(x,y) & P17(y,z) => P17(x,z)",
+      "display": "∀x,y,z: location of formation [P740](x,y) ∧ country [P17](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_chain",
+      "support": 23,
+      "pca_confidence": 0.418182,
+      "wilson_lower": 0.297376,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "5a1ca2d77102ab45",
+      "rule": "P159(x,y) & P17(y,z) => P17(x,z)",
+      "display": "∀x,y,z: headquarters location [P159](x,y) ∧ country [P17](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_chain",
+      "support": 110,
+      "pca_confidence": 0.347003,
+      "wilson_lower": 0.296715,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "303c23f75735afa4",
+      "rule": "P264(y,x) & P495(y,z) => P17(x,z)",
+      "display": "∀x,y,z: record label [P264](y,x) ∧ country of origin [P495](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 35,
+      "pca_confidence": 0.376344,
+      "wilson_lower": 0.284633,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "ec634b38ce3fb87d",
+      "rule": "P20(x,y) & P17(y,z) => P27(x,z)",
+      "display": "∀x,y,z: place of death [P20](x,y) ∧ country [P17](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 3611,
+      "pca_confidence": 0.285771,
+      "wilson_lower": 0.27796,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "5cd01ac32e953d90",
+      "rule": "P551(x,z) => P19(x,z)",
+      "display": "∀x,y,z: residence [P551](x,z) → place of birth [P19](x,z)",
+      "head": "P19",
+      "type": "subrelation",
+      "support": 284,
+      "pca_confidence": 0.305376,
+      "wilson_lower": 0.276626,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "2112608660ac81c9",
+      "rule": "P530(x,y) & P463(z,y) => P530(x,z)",
+      "display": "∀x,y,z: diplomatic relation [P530](x,y) ∧ member of [P463](z,y) → diplomatic relation [P530](x,z)",
+      "head": "P530",
+      "type": "composition_reversed",
+      "support": 446,
+      "pca_confidence": 0.297135,
+      "wilson_lower": 0.274557,
+      "counting": "ordered_pairs",
+      "flags": {
+        "hub_dominated": "Q458",
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b86e633a2d56080b",
+      "rule": "P463(x,y) & P530(z,y) => P530(x,z)",
+      "display": "∀x,y,z: member of [P463](x,y) ∧ diplomatic relation [P530](z,y) → diplomatic relation [P530](x,z)",
+      "head": "P530",
+      "type": "composition_reversed",
+      "support": 455,
+      "pca_confidence": 0.295839,
+      "wilson_lower": 0.273559,
+      "counting": "ordered_pairs",
+      "flags": {
+        "hub_dominated": "Q458",
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b01130fbb4f70383",
+      "rule": "P20(y,x) & P27(y,z) => P17(x,z)",
+      "display": "∀x,y,z: place of death [P20](y,x) ∧ country of citizenship [P27](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 361,
+      "pca_confidence": 0.295659,
+      "wilson_lower": 0.270736,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "639b7d23f65e040b",
+      "rule": "P737(y,x) & P106(y,z) => P106(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ occupation [P106](y,z) → occupation [P106](x,z)",
+      "head": "P106",
+      "type": "composition_reversed",
+      "support": 1649,
+      "pca_confidence": 0.271128,
+      "wilson_lower": 0.260103,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "4102a2f224d07922",
+      "rule": "P737(y,x) & P135(y,z) => P135(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ movement [P135](y,z) → movement [P135](x,z)",
+      "head": "P135",
+      "type": "composition_reversed",
+      "support": 25,
+      "pca_confidence": 0.362319,
+      "wilson_lower": 0.258956,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "1b8157b24a37233a",
+      "rule": "P551(x,z) => P20(x,z)",
+      "display": "∀x,y,z: residence [P551](x,z) → place of death [P20](x,z)",
+      "head": "P20",
+      "type": "subrelation",
+      "support": 128,
+      "pca_confidence": 0.300469,
+      "wilson_lower": 0.258874,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "c438aace8a5f255b",
+      "rule": "P737(x,y) & P463(y,z) => P463(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ member of [P463](y,z) → member of [P463](x,z)",
+      "head": "P463",
+      "type": "composition_chain",
+      "support": 146,
+      "pca_confidence": 0.290258,
+      "wilson_lower": 0.252301,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "79020200454449d6",
+      "rule": "P26(y,x) & P551(y,z) => P551(x,z)",
+      "display": "∀x,y,z: spouse [P26](y,x) ∧ residence [P551](y,z) → residence [P551](x,z)",
+      "head": "P551",
+      "type": "composition_reversed",
+      "support": 21,
+      "pca_confidence": 0.35,
+      "wilson_lower": 0.241676,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "8079e6509500b3d8",
+      "rule": "P26(x,y) & P551(y,z) => P551(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,y) ∧ residence [P551](y,z) → residence [P551](x,z)",
+      "head": "P551",
+      "type": "composition_chain",
+      "support": 21,
+      "pca_confidence": 0.35,
+      "wilson_lower": 0.241676,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "57fb6e416e584abf",
+      "rule": "P26(x,z) => P451(x,z)",
+      "display": "∀x,y,z: spouse [P26](x,z) → unmarried partner [P451](x,z)",
+      "head": "P451",
+      "type": "subrelation",
+      "support": 25,
+      "pca_confidence": 0.337838,
+      "wilson_lower": 0.240465,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "0e1a6027bd8236cc",
+      "rule": "P451(x,z) => P26(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](x,z) → spouse [P26](x,z)",
+      "head": "P26",
+      "type": "subrelation",
+      "support": 25,
+      "pca_confidence": 0.333333,
+      "wilson_lower": 0.237081,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "ad6b943e0851c84e",
+      "rule": "P737(x,y) & P106(y,z) => P106(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ occupation [P106](y,z) → occupation [P106](x,z)",
+      "head": "P106",
+      "type": "composition_chain",
+      "support": 1458,
+      "pca_confidence": 0.245042,
+      "wilson_lower": 0.23428,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "c2d9163249c3805c",
+      "rule": "P463(x,y) & P159(y,z) => P20(x,z)",
+      "display": "∀x,y,z: member of [P463](x,y) ∧ headquarters location [P159](y,z) → place of death [P20](x,z)",
+      "head": "P20",
+      "type": "composition_chain",
+      "support": 315,
+      "pca_confidence": 0.257143,
+      "wilson_lower": 0.233453,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "390a546aec56b0c8",
+      "rule": "P737(y,x) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_reversed",
+      "support": 271,
+      "pca_confidence": 0.25785,
+      "wilson_lower": 0.232318,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "31649f99a495c3f8",
+      "rule": "P737(y,x) & P101(y,z) => P101(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ field of work [P101](y,z) → field of work [P101](x,z)",
+      "head": "P101",
+      "type": "composition_reversed",
+      "support": 81,
+      "pca_confidence": 0.278351,
+      "wilson_lower": 0.229998,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "cc2df93e7629f211",
+      "rule": "P737(x,y) & P135(y,z) => P135(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ movement [P135](y,z) → movement [P135](x,z)",
+      "head": "P135",
+      "type": "composition_chain",
+      "support": 21,
+      "pca_confidence": 0.333333,
+      "wilson_lower": 0.229494,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "443d0de82a7d7cb7",
+      "rule": "P26(z,x) => P451(x,z)",
+      "display": "∀x,y,z: spouse [P26](z,x) → unmarried partner [P451](x,z)",
+      "head": "P451",
+      "type": "inverse",
+      "support": 22,
+      "pca_confidence": 0.328358,
+      "wilson_lower": 0.227912,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "25219308733fcb8e",
+      "rule": "P69(x,z) => P108(x,z)",
+      "display": "∀x,y,z: educated at [P69](x,z) → employer [P108](x,z)",
+      "head": "P108",
+      "type": "subrelation",
+      "support": 761,
+      "pca_confidence": 0.24228,
+      "wilson_lower": 0.227616,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "b480788d132967cb",
+      "rule": "P131(x,y) & P17(y,z) => P17(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](x,y) ∧ country [P17](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_chain",
+      "support": 61,
+      "pca_confidence": 0.282407,
+      "wilson_lower": 0.22658,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "11dc3c2cb295b26b",
+      "rule": "P108(x,z) => P69(x,z)",
+      "display": "∀x,y,z: employer [P108](x,z) → educated at [P69](x,z)",
+      "head": "P69",
+      "type": "subrelation",
+      "support": 761,
+      "pca_confidence": 0.241052,
+      "wilson_lower": 0.226452,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "aa14c0255502017b",
+      "rule": "P551(y,x) & P1412(y,z) => P37(x,z)",
+      "display": "∀x,y,z: residence [P551](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → official language [P37](x,z)",
+      "head": "P37",
+      "type": "composition_reversed",
+      "support": 64,
+      "pca_confidence": 0.274678,
+      "wilson_lower": 0.221369,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "d73d195c6cbbee44",
+      "rule": "P737(y,x) & P463(y,z) => P463(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ member of [P463](y,z) → member of [P463](x,z)",
+      "head": "P463",
+      "type": "composition_reversed",
+      "support": 141,
+      "pca_confidence": 0.254973,
+      "wilson_lower": 0.220423,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "444e47ba3b6329ba",
+      "rule": "P19(x,z) => P20(x,z)",
+      "display": "∀x,y,z: place of birth [P19](x,z) → place of death [P20](x,z)",
+      "head": "P20",
+      "type": "subrelation",
+      "support": 530,
+      "pca_confidence": 0.232558,
+      "wilson_lower": 0.215672,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "51cd94468b7f712c",
+      "rule": "P20(x,z) => P19(x,z)",
+      "display": "∀x,y,z: place of death [P20](x,z) → place of birth [P19](x,z)",
+      "head": "P19",
+      "type": "subrelation",
+      "support": 530,
+      "pca_confidence": 0.232252,
+      "wilson_lower": 0.215386,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "f5605fa8b2d01494",
+      "rule": "P451(z,x) => P26(x,z)",
+      "display": "∀x,y,z: unmarried partner [P451](z,x) → spouse [P26](x,z)",
+      "head": "P26",
+      "type": "inverse",
+      "support": 22,
+      "pca_confidence": 0.305556,
+      "wilson_lower": 0.211265,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "148e4297e2e76da8",
+      "rule": "P737(y,x) & P172(y,z) => P172(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ ethnic group [P172](y,z) → ethnic group [P172](x,z)",
+      "head": "P172",
+      "type": "composition_reversed",
+      "support": 48,
+      "pca_confidence": 0.269663,
+      "wilson_lower": 0.209842,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "c72bf1d8da5313e7",
+      "rule": "P19(y,x) & P1412(y,z) => P37(x,z)",
+      "display": "∀x,y,z: place of birth [P19](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → official language [P37](x,z)",
+      "head": "P37",
+      "type": "composition_reversed",
+      "support": 51,
+      "pca_confidence": 0.267016,
+      "wilson_lower": 0.20932,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "3ecdfa3b81278132",
+      "rule": "P135(x,z) => P140(x,z)",
+      "display": "∀x,y,z: movement [P135](x,z) → religion [P140](x,z)",
+      "head": "P140",
+      "type": "subrelation",
+      "support": 33,
+      "pca_confidence": 0.282051,
+      "wilson_lower": 0.208447,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "6fa5a199e00cd82e",
+      "rule": "P737(x,y) & P172(y,z) => P172(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ ethnic group [P172](y,z) → ethnic group [P172](x,z)",
+      "head": "P172",
+      "type": "composition_chain",
+      "support": 42,
+      "pca_confidence": 0.267516,
+      "wilson_lower": 0.204432,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "a24c4cb1f371555a",
+      "rule": "P131(x,y) & P131(y,z) => P17(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](x,y) ∧ located in the administrative terroritorial entity [P131](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_chain",
+      "support": 23,
+      "pca_confidence": 0.291139,
+      "wilson_lower": 0.202519,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "fc3e251aed8faf0b",
+      "rule": "P737(x,y) & P101(y,z) => P101(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ field of work [P101](y,z) → field of work [P101](x,z)",
+      "head": "P101",
+      "type": "composition_chain",
+      "support": 78,
+      "pca_confidence": 0.242991,
+      "wilson_lower": 0.19929,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "434603dc7f594d2e",
+      "rule": "P737(x,y) & P27(y,z) => P27(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ country of citizenship [P27](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 233,
+      "pca_confidence": 0.218779,
+      "wilson_lower": 0.194984,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "36ef1ee8706466c9",
+      "rule": "P737(y,x) & P136(y,z) => P136(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ genre [P136](y,z) → genre [P136](x,z)",
+      "head": "P136",
+      "type": "composition_reversed",
+      "support": 142,
+      "pca_confidence": 0.217458,
+      "wilson_lower": 0.187519,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "f967d6b20183f58d",
+      "rule": "P530(y,x) & P361(y,z) => P361(x,z)",
+      "display": "∀x,y,z: diplomatic relation [P530](y,x) ∧ part of [P361](y,z) → part of [P361](x,z)",
+      "head": "P361",
+      "type": "composition_reversed",
+      "support": 78,
+      "pca_confidence": 0.226744,
+      "wilson_lower": 0.185654,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "2ddbd6f220d7f4f6",
+      "rule": "P17(x,y) & P131(y,z) => P17(x,z)",
+      "display": "∀x,y,z: country [P17](x,y) ∧ located in the administrative terroritorial entity [P131](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_chain",
+      "support": 28,
+      "pca_confidence": 0.256881,
+      "wilson_lower": 0.184119,
+      "counting": "ordered_pairs",
+      "flags": {
+        "hub_dominated": "Q27306",
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "376d9d750884f285",
+      "rule": "P20(y,x) & P1412(y,z) => P37(x,z)",
+      "display": "∀x,y,z: place of death [P20](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → official language [P37](x,z)",
+      "head": "P37",
+      "type": "composition_reversed",
+      "support": 49,
+      "pca_confidence": 0.233333,
+      "wilson_lower": 0.181232,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "094ff715ee016df0",
+      "rule": "P27(x,y) & P140(y,z) => P140(x,z)",
+      "display": "∀x,y,z: country of citizenship [P27](x,y) ∧ religion [P140](y,z) → religion [P140](x,z)",
+      "head": "P140",
+      "type": "composition_chain",
+      "support": 36,
+      "pca_confidence": 0.243243,
+      "wilson_lower": 0.181188,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "4bee20f7d12d4498",
+      "rule": "P17(x,z) => P131(x,z)",
+      "display": "∀x,y,z: country [P17](x,z) → located in the administrative terroritorial entity [P131](x,z)",
+      "head": "P131",
+      "type": "subrelation",
+      "support": 63,
+      "pca_confidence": 0.222615,
+      "wilson_lower": 0.178044,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "0a756f06a98ad8a5",
+      "rule": "P737(x,y) & P136(y,z) => P136(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ genre [P136](y,z) → genre [P136](x,z)",
+      "head": "P136",
+      "type": "composition_chain",
+      "support": 132,
+      "pca_confidence": 0.197605,
+      "wilson_lower": 0.169174,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "0ae76c5e18bf2339",
+      "rule": "P264(y,x) & P27(y,z) => P17(x,z)",
+      "display": "∀x,y,z: record label [P264](y,x) ∧ country of citizenship [P27](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 110,
+      "pca_confidence": 0.192982,
+      "wilson_lower": 0.162683,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "6a1fb8fcfe0f2f78",
+      "rule": "P737(x,y) & P140(y,z) => P140(x,z)",
+      "display": "∀x,y,z: influenced by [P737](x,y) ∧ religion [P140](y,z) → religion [P140](x,z)",
+      "head": "P140",
+      "type": "composition_chain",
+      "support": 65,
+      "pca_confidence": 0.201863,
+      "wilson_lower": 0.161654,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "704dbab97ebf274d",
+      "rule": "P737(y,x) & P140(y,z) => P140(x,z)",
+      "display": "∀x,y,z: influenced by [P737](y,x) ∧ religion [P140](y,z) → religion [P140](x,z)",
+      "head": "P140",
+      "type": "composition_reversed",
+      "support": 68,
+      "pca_confidence": 0.187845,
+      "wilson_lower": 0.150964,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "ab04a99ba8eaf08d",
+      "rule": "P27(y,x) & P1412(y,z) => P37(x,z)",
+      "display": "∀x,y,z: country of citizenship [P27](y,x) ∧ languages spoken, written, or signed [P1412](y,z) → official language [P37](x,z)",
+      "head": "P37",
+      "type": "composition_reversed",
+      "support": 198,
+      "pca_confidence": 0.168224,
+      "wilson_lower": 0.147941,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "2512916148b0c6b8",
+      "rule": "P840(y,x) & P495(y,z) => P17(x,z)",
+      "display": "∀x,y,z: narrative location [P840](y,x) ∧ country of origin [P495](y,z) → country [P17](x,z)",
+      "head": "P17",
+      "type": "composition_reversed",
+      "support": 48,
+      "pca_confidence": 0.189723,
+      "wilson_lower": 0.146189,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "ff2f19fa0ea2fb10",
+      "rule": "P19(x,y) & P131(y,z) => P27(x,z)",
+      "display": "∀x,y,z: place of birth [P19](x,y) ∧ located in the administrative terroritorial entity [P131](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 666,
+      "pca_confidence": 0.153209,
+      "wilson_lower": 0.142808,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "eaf03bf8bb48bcb8",
+      "rule": "P20(x,y) & P131(y,z) => P27(x,z)",
+      "display": "∀x,y,z: place of death [P20](x,y) ∧ located in the administrative terroritorial entity [P131](y,z) → country of citizenship [P27](x,z)",
+      "head": "P27",
+      "type": "composition_chain",
+      "support": 634,
+      "pca_confidence": 0.153288,
+      "wilson_lower": 0.142631,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "4904560dc3adc0ba",
+      "rule": "P463(x,y) & P131(y,z) => P20(x,z)",
+      "display": "∀x,y,z: member of [P463](x,y) ∧ located in the administrative terroritorial entity [P131](y,z) → place of death [P20](x,z)",
+      "head": "P20",
+      "type": "composition_chain",
+      "support": 175,
+      "pca_confidence": 0.159963,
+      "wilson_lower": 0.139436,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "33c3ba5578975676",
+      "rule": "P131(y,x) & P17(y,z) => P131(x,z)",
+      "display": "∀x,y,z: located in the administrative terroritorial entity [P131](y,x) ∧ country [P17](y,z) → located in the administrative terroritorial entity [P131](x,z)",
+      "head": "P131",
+      "type": "composition_reversed",
+      "support": 16,
+      "pca_confidence": 0.207792,
+      "wilson_lower": 0.13215,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "43cfa8887c8257c5",
+      "rule": "P264(x,y) & P136(y,z) => P136(x,z)",
+      "display": "∀x,y,z: record label [P264](x,y) ∧ genre [P136](y,z) → genre [P136](x,z)",
+      "head": "P136",
+      "type": "composition_chain",
+      "support": 386,
+      "pca_confidence": 0.137808,
+      "wilson_lower": 0.125538,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "a2f2e2837cb2824a",
+      "rule": "P119(y,x) & P27(y,z) => P131(x,z)",
+      "display": "∀x,y,z: place of burial [P119](y,x) ∧ country of citizenship [P27](y,z) → located in the administrative terroritorial entity [P131](x,z)",
+      "head": "P131",
+      "type": "composition_reversed",
+      "support": 14,
+      "pca_confidence": 0.186667,
+      "wilson_lower": 0.11458,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "03ea128229ba9090",
+      "rule": "P463(x,y) & P159(y,z) => P19(x,z)",
+      "display": "∀x,y,z: member of [P463](x,y) ∧ headquarters location [P159](y,z) → place of birth [P19](x,z)",
+      "head": "P19",
+      "type": "composition_chain",
+      "support": 134,
+      "pca_confidence": 0.134269,
+      "wilson_lower": 0.114512,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "cf5690ccd09860d3",
+      "rule": "P27(x,y) & P131(z,y) => P19(x,z)",
+      "display": "∀x,y,z: country of citizenship [P27](x,y) ∧ located in the administrative terroritorial entity [P131](z,y) → place of birth [P19](x,z)",
+      "head": "P19",
+      "type": "composition_reversed",
+      "support": 610,
+      "pca_confidence": 0.114597,
+      "wilson_lower": 0.106316,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "ecbb4bce3de113c9",
+      "rule": "P27(x,y) & P131(z,y) => P20(x,z)",
+      "display": "∀x,y,z: country of citizenship [P27](x,y) ∧ located in the administrative terroritorial entity [P131](z,y) → place of death [P20](x,z)",
+      "head": "P20",
+      "type": "composition_reversed",
+      "support": 573,
+      "pca_confidence": 0.106843,
+      "wilson_lower": 0.098855,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "37ad8a9571bb260e",
+      "rule": "P161(x,y) & P20(y,z) => P840(x,z)",
+      "display": "∀x,y,z: cast member [P161](x,y) ∧ place of death [P20](y,z) → narrative location [P840](x,z)",
+      "head": "P840",
+      "type": "composition_chain",
+      "support": 62,
+      "pca_confidence": 0.121331,
+      "wilson_lower": 0.095811,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "27be1939ab7ab301",
+      "rule": "P27(x,y) & P131(z,y) => P551(x,z)",
+      "display": "∀x,y,z: country of citizenship [P27](x,y) ∧ located in the administrative terroritorial entity [P131](z,y) → residence [P551](x,z)",
+      "head": "P551",
+      "type": "composition_reversed",
+      "support": 88,
+      "pca_confidence": 0.104887,
+      "wilson_lower": 0.085923,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "668f127e8649708e",
+      "rule": "P19(y,x) & P27(y,z) => P131(x,z)",
+      "display": "∀x,y,z: place of birth [P19](y,x) ∧ country of citizenship [P27](y,z) → located in the administrative terroritorial entity [P131](x,z)",
+      "head": "P131",
+      "type": "composition_reversed",
+      "support": 49,
+      "pca_confidence": 0.107456,
+      "wilson_lower": 0.08224,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    },
+    {
+      "rule_id": "d1ec58f7cfc07cea",
+      "rule": "P551(y,x) & P27(y,z) => P131(x,z)",
+      "display": "∀x,y,z: residence [P551](y,x) ∧ country of citizenship [P27](y,z) → located in the administrative terroritorial entity [P131](x,z)",
+      "head": "P131",
+      "type": "composition_reversed",
+      "support": 32,
+      "pca_confidence": 0.110345,
+      "wilson_lower": 0.079254,
+      "counting": "ordered_pairs",
+      "flags": {
+        "unstable_on_90pct": false
+      }
+    }
+  ]
+}

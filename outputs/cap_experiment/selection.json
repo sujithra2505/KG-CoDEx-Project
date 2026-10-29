@@ -1,0 +1,96 @@
+{
+  "tool": "cap_experiment.py",
+  "version": "1.0.0",
+  "selected_at": "2026-10-29T06:57:32+00:00",
+  "rule_file": "outputs/cap_experiment/selection_rule.json",
+  "rule_sha256": "332b040ddeb04f5c33be1a05721510b6dc23e11b66d2d961483fc7de9f81a9ef",
+  "rule_frozen_at": "2026-10-29T06:55:34+00:00",
+  "selected": "cap1000_v2",
+  "selected_cap": 1000,
+  "selected_version": "v2",
+  "table": {
+    "cap100_v1": {
+      "cap": 100,
+      "version": "v1",
+      "tp": 246,
+      "fp": 12,
+      "precision_wilson_lower": 0.9204736708319821,
+      "reference_wilson_lower": 0.9204736708319821,
+      "threshold": 0.870473670831982,
+      "eligible": true
+    },
+    "cap100_v2": {
+      "cap": 100,
+      "version": "v2",
+      "tp": 253,
+      "fp": 11,
+      "precision_wilson_lower": 0.9269415931100703,
+      "reference_wilson_lower": 0.9269415931100703,
+      "threshold": 0.8769415931100702,
+      "eligible": true
+    },
+    "cap250_v1": {
+      "cap": 250,
+      "version": "v1",
+      "tp": 428,
+      "fp": 21,
+      "precision_wilson_lower": 0.9295603830090798,
+      "reference_wilson_lower": 0.9204736708319821,
+      "threshold": 0.870473670831982,
+      "eligible": true
+    },
+    "cap250_v2": {
+      "cap": 250,
+      "version": "v2",
+      "tp": 477,
+      "fp": 19,
+      "precision_wilson_lower": 0.9409485471726646,
+      "reference_wilson_lower": 0.9269415931100703,
+      "threshold": 0.8769415931100702,
+      "eligible": true
+    },
+    "cap500_v1": {
+      "cap": 500,
+      "version": "v1",
+      "tp": 600,
+      "fp": 40,
+      "precision_wilson_lower": 0.9160103601748752,
+      "reference_wilson_lower": 0.9204736708319821,
+      "threshold": 0.870473670831982,
+      "eligible": true
+    },
+    "cap500_v2": {
+      "cap": 500,
+      "version": "v2",
+      "tp": 653,
+      "fp": 38,
+      "precision_wilson_lower": 0.9254187420067819,
+      "reference_wilson_lower": 0.9269415931100703,
+      "threshold": 0.8769415931100702,
+      "eligible": true
+    },
+    "cap1000_v1": {
+      "cap": 1000,
+      "version": "v1",
+      "tp": 816,
+      "fp": 62,
+      "precision_wilson_lower": 0.9105026859866856,
+      "reference_wilson_lower": 0.9204736708319821,
+      "threshold": 0.870473670831982,
+      "eligible": true
+    },
+    "cap1000_v2": {
+      "cap": 1000,
+      "version": "v2",
+      "tp": 875,
+      "fp": 62,
+      "precision_wilson_lower": 0.9160775727998227,
+      "reference_wilson_lower": 0.9269415931100703,
+      "threshold": 0.8769415931100702,
+      "eligible": true
+    }
+  },
+  "selected_path": "outputs/cap_experiment/cap_1000/v2",
+  "selected_predictions_sha256": "759a1d60c35df41f198f63fb1729debac43378318262ee5e9b170c99d2192397",
+  "validation_results_sha256": "719b6de8e26b4f989ab5f2e22413e97070ede8acc6f275c0d561561478fbab8c"
+}

@@ -1,0 +1,247 @@
+{
+  "phase": "4B",
+  "miner": "phase4_rule_mining.py",
+  "miner_version": "4B.2.0",
+  "generated_at": "2026-10-28T19:07:32+00:00",
+  "runtime_seconds": 92.5,
+  "run_dir": "outputs/phase4/run_grid_ext",
+  "inputs": {
+    "phase3_trig": {
+      "path": "outputs/phase3/codexm_train_ontology.trig",
+      "sha256": "e934ee403f5f49ce6bea437c87159cf0ce248686507c726a25e62bef312ee9a2"
+    },
+    "phase3_manifest": {
+      "path": "outputs/phase3/phase3_manifest.json",
+      "sha256": "0660fcbe49cfa99a04859dc9572637316141e25e6473a7704d6f1851266f00bc"
+    },
+    "training_triples_file": {
+      "path": "data/train.txt",
+      "sha256": "d99c3437ab51690391a26d96976adf6e5494dba7ef6902e77000551bfa566556"
+    },
+    "named_graph_used": "urn:codexm:graph:train",
+    "training_triples": 185584
+  },
+  "files_not_opened": "data/valid*, data/test* (size and mtime recorded only)",
+  "config": {
+    "min_head_triples": 20,
+    "min_support": 5,
+    "min_pca_body": 20,
+    "min_head_coverage": 0.01,
+    "min_pca": 0.05,
+    "min_lift": 1.5,
+    "top_k_per_head": 50,
+    "max_body_paths": 5000000,
+    "wilson_z": 1.96,
+    "hub_share": 0.5,
+    "dominance_jaccard": 0.9,
+    "no_gain_coverage": 0.9,
+    "n_examples": 10,
+    "n_counterexamples": 10,
+    "n_top_middles": 5,
+    "symmetric_unit": "unordered"
+  },
+  "stats": {
+    "relations": 51,
+    "head_relations_mined": 43,
+    "head_relations_not_mined_too_few_triples": {
+      "P1056": 2,
+      "P113": 1,
+      "P2283": 9,
+      "P3095": 2,
+      "P452": 17,
+      "P50": 16,
+      "P54": 2,
+      "P780": 1
+    },
+    "body_shapes_total": 10506,
+    "body_shapes_not_joinable": 7296,
+    "body_shapes_evaluated": 3204,
+    "body_shapes_skipped_too_large": [
+      {
+        "body": "P106(x,y) & P106(z,y)",
+        "paths": 96828205,
+        "middle_entities": 371
+      },
+      {
+        "body": "P1303(x,y) & P1303(z,y)",
+        "paths": 7488760,
+        "middle_entities": 38
+      },
+      {
+        "body": "P1412(x,y) & P1412(z,y)",
+        "paths": 23417394,
+        "middle_entities": 62
+      },
+      {
+        "body": "P27(x,y) & P27(z,y)",
+        "paths": 27561563,
+        "middle_entities": 214
+      },
+      {
+        "body": "P27(x,y) & P495(z,y)",
+        "paths": 5239219,
+        "middle_entities": 47
+      },
+      {
+        "body": "P495(x,y) & P27(z,y)",
+        "paths": 5239219,
+        "middle_entities": 47
+      }
+    ],
+    "paths_in_evaluated_shapes": 30334434,
+    "rule_head_combinations_with_support_below_min_support": 1294,
+    "candidates_scored": 991,
+    "candidates_passing_thresholds": 212,
+    "candidates_selected": 194,
+    "rejection_reason_counts": {
+      "head_coverage_below_min": 485,
+      "lift_below_min": 435,
+      "no_gain_over_shorter": 7,
+      "pca_below_min": 393,
+      "pca_body_below_min": 75,
+      "redundant_with": 11
+    },
+    "selected_by_type": {
+      "composition_chain": 79,
+      "composition_reversed": 89,
+      "inverse": 2,
+      "subrelation": 19,
+      "symmetry": 4,
+      "transitivity": 1
+    },
+    "selected_by_head": {
+      "P101": 2,
+      "P102": 6,
+      "P106": 8,
+      "P108": 1,
+      "P119": 3,
+      "P1303": 6,
+      "P131": 9,
+      "P135": 2,
+      "P136": 3,
+      "P140": 6,
+      "P1412": 14,
+      "P159": 6,
+      "P161": 1,
+      "P17": 24,
+      "P172": 7,
+      "P19": 6,
+      "P20": 7,
+      "P26": 4,
+      "P264": 1,
+      "P27": 20,
+      "P30": 3,
+      "P3373": 3,
+      "P361": 1,
+      "P37": 10,
+      "P40": 4,
+      "P451": 3,
+      "P463": 4,
+      "P495": 5,
+      "P509": 1,
+      "P530": 4,
+      "P551": 10,
+      "P57": 1,
+      "P69": 1,
+      "P737": 3,
+      "P840": 5
+    },
+    "hub_dominated_selected": 12
+  },
+  "outputs": {
+    "rule_candidates.jsonl": "fa5b6a9bacbed18d9534048a9e1302e810c905cbf48dc6d57232895030956f6d",
+    "selected_rules.json": "5c4b51e31ed23201aea1d62787e93aff5798906593affc98d3742ffe2fdfcd51",
+    "stability_check.json": "598deeec80e5631da36420615468cd5995d851f5292ec45a43e6200e89adf6f9",
+    "rules_report.md": "2098b331bddc6a4c935483f1c3035868ddf28c7b62bbf52322bb49f917bd56af"
+  },
+  "protected_files": {
+    "DISPLAY_LABELS.md": {
+      "sha256": "c9a1ee71efeda716f442d50af7e60f839f0c897d385b588ea1e6f39ac27e79a3"
+    },
+    "data/entity_labels.json": {
+      "sha256": "d5491061f96a2e684d3198d2c8eca1ed5200b34449964ea8bfbf524d65447f6b"
+    },
+    "data/relation_labels.json": {
+      "sha256": "b7a8f429d91000c715207b4da0c5bb322b1d4db091f926427a50ba8dd9efdf94"
+    },
+    "data/test.txt": {
+      "size": 203693,
+      "mtime_ns": 1605374450000000000,
+      "opened": false
+    },
+    "data/test_negatives.txt": {
+      "size": 189932,
+      "mtime_ns": 1605374450000000000,
+      "opened": false
+    },
+    "data/train.txt": {
+      "sha256": "d99c3437ab51690391a26d96976adf6e5494dba7ef6902e77000551bfa566556"
+    },
+    "data/valid.txt": {
+      "size": 203470,
+      "mtime_ns": 1605374450000000000,
+      "opened": false
+    },
+    "data/valid_negatives.txt": {
+      "size": 189665,
+      "mtime_ns": 1605374450000000000,
+      "opened": false
+    },
+    "display_labels.py": {
+      "sha256": "f6cb3f7f4956fd738d8f48027a5f400b76294f821ace621adf64da11b1738d13"
+    },
+    "outputs/phase1_dataset_report.md": {
+      "sha256": "e5f1ea332b9050a0960d3dec97c54fa4983de67a1a0dd504dd75ddee4cbfeed9"
+    },
+    "outputs/phase2/README.md": {
+      "sha256": "4ef0d288bfab9d7e32eb469a723475d4d7d4872b8e1232a3d8dbd99694f2ad33"
+    },
+    "outputs/phase2/filtering_decisions.json": {
+      "sha256": "8864c2a3b5b69b5a50e764da138d2e2d9b07763f2cbc5fc06dfe94c2496da931"
+    },
+    "outputs/phase2/graph_statistics.json": {
+      "sha256": "66daa65ed83fe4a866ecb8a40b1587ce32585c1a66b529031bdc0838a7375323"
+    },
+    "outputs/phase2/interactive_graph.html": {
+      "sha256": "dfbbb936b5df2fbb8f9ee6d8a101dcd0213aa80023cc76c64b4e1b0ea7a0876f"
+    },
+    "outputs/phase2/relationship_analysis.md": {
+      "sha256": "ee7ceb6a1041aa8694f015c41dd91ba6a6fe10d5631fc28bf715672e9d42a2ab"
+    },
+    "outputs/phase2/training_graph.graphml": {
+      "sha256": "b082d1770ce90cb39fcf70f36dc771fe367977e4d4bafd6613666335f81151bd"
+    },
+    "outputs/phase3/README.md": {
+      "sha256": "acd7ac609a9d052961f52875c7bcff880fa913b12fabe62238b26af15bd17165"
+    },
+    "outputs/phase3/codexm_train_ontology.trig": {
+      "sha256": "e934ee403f5f49ce6bea437c87159cf0ce248686507c726a25e62bef312ee9a2"
+    },
+    "outputs/phase3/ontology_design.md": {
+      "sha256": "d8de9edaa0511c499b88cf7cdbd05f55565930f7362a39dd89a10649b5042f1a"
+    },
+    "outputs/phase3/phase3_manifest.json": {
+      "sha256": "0660fcbe49cfa99a04859dc9572637316141e25e6473a7704d6f1851266f00bc"
+    },
+    "outputs/phase4/phase4_rule_mining_design.md": {
+      "sha256": "ef6a092ce6ba31a21381592f53b589cffeb8fb4ad8991fdc67d956f01cdc9077"
+    },
+    "phase2_graph.py": {
+      "sha256": "557fb4126afd2cbd61c1b46f28809ab559158fe1d665740c47bfe749a1438ccf"
+    },
+    "phase3_ontology.py": {
+      "sha256": "885a4bd907d9b5d3de5b55d492cae4f2e3df7de55dbae09e5d12cb6539de4182"
+    },
+    "tests/test_display_labels.py": {
+      "sha256": "957ae9b449d60465616779c61577960da2a08fd789d54f0f7921e8362b727cbb"
+    },
+    "tests/test_phase2_graph.py": {
+      "sha256": "2474926fba03659f7bb0d66a26638a4b56844a75b83d1b9eb331b1acabdb3d40"
+    },
+    "tests/test_phase3_ontology.py": {
+      "sha256": "11371d1bcbb79ab285ec5e657372aa4cf2fe4b5be7d787d5be37a117c10a8ac4"
+    }
+  },
+  "protected_files_unchanged": true,
+  "predictions_written": false
+}
