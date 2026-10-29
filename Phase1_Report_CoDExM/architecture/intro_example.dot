@@ -1,0 +1,8 @@
+digraph G { rankdir=LR; nodesep=0.6; ranksep=1.3; pad=0.1;
+ node [shape=ellipse, style=filled, fillcolor="#eaf2fc", color="#2a78d6", fontname="Helvetica", fontsize=11];
+ edge [fontname="Helvetica", fontsize=10];
+ A [label="Jeremy Piven\n(Q315083)"]; B [label="New York University Tisch\nSchool of the Arts"]; C [label="United States of America\n(Q30)"];
+ A -> B [label="educated at (P69)", color="#008300", penwidth=1.8, fontcolor="#008300"];
+ B -> C [label="country (P17)", color="#008300", penwidth=1.8, fontcolor="#008300"];
+ A -> C [label="candidate: country of citizenship (P27)\nmatches a test positive", style=dashed, color="#eb6834", penwidth=2, fontcolor="#b4441a", constraint=false];
+}

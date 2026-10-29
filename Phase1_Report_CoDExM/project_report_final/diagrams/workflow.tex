@@ -1,0 +1,20 @@
+% Workflow pipeline (editable TikZ, Draft 4 palette)
+\begin{tikzpicture}[font=\footnotesize, node distance=5mm and 5mm,
+  st/.style={draw=impldraw, fill=implfill, rounded corners=3pt, align=center, text width=2.35cm, minimum height=12mm},
+  ev/.style={draw=pubdraw, fill=pubfill, rounded corners=3pt, align=center, text width=2.35cm, minimum height=12mm},
+  nt/.style={draw=plandraw, fill=planfill, dashed, rounded corners=3pt, align=center, text width=5.6cm, minimum height=10mm},
+  arr/.style={-{Stealth[length=2mm]}, thick, draw=black!70}]
+\node[st] (a) {\textbf{1.} CoDEx-M dataset};
+\node[st, right=of a] (b) {\textbf{2.} Dataset inspection};
+\node[st, right=of b] (c) {\textbf{3.} Training graph construction};
+\node[st, right=of c] (d) {\textbf{4.} RDF/OWL ontology generation};
+\node[st, right=of d] (e) {\textbf{5.} Rule mining and selection};
+\node[st, below=9mm of e] (f) {\textbf{6.} Candidate triple generation};
+\node[st, left=of f] (g) {\textbf{7.} V1/V2 ranking};
+\node[ev, left=of g] (h) {\textbf{8.} Validation-based cap selection};
+\node[ev, left=of h] (i) {\textbf{9.} Final test evaluation};
+\node[st, left=of i] (j) {\textbf{10.} Results and dashboards};
+\node[nt, below=8mm of g] (n) {\textbf{Earlier baseline:} cap-100 V1 and V2 were evaluated on the test split before the cap experiment};
+\foreach \x/\y in {a/b,b/c,c/d,d/e,e/f,f/g,g/h,h/i,i/j} \draw[arr] (\x)--(\y);
+\draw[arr, dashed, draw=plandraw] (g.south)--(g.south|-n.north);
+\end{tikzpicture}

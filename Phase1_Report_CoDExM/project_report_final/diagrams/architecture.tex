@@ -1,0 +1,27 @@
+% Architecture of the implemented system (editable TikZ, Draft 4 palette)
+\begin{tikzpicture}[font=\footnotesize, node distance=6mm and 7mm,
+  blk/.style={draw=impldraw, fill=implfill, rounded corners=3pt, align=center, text width=3.3cm, minimum height=15mm},
+  evl/.style={draw=pubdraw, fill=pubfill, rounded corners=3pt, align=center, text width=3.3cm, minimum height=15mm},
+  fut/.style={draw=plandraw, fill=planfill, dashed, rounded corners=3pt, align=center, text width=3.3cm, minimum height=12mm},
+  tag/.style={font=\scriptsize\itshape, text=black!65},
+  arr/.style={-{Stealth[length=2.2mm]}, thick, draw=black!70}]
+\node[draw=black!60, fill=white, rounded corners=3pt, align=left, text width=3.3cm, minimum height=15mm] (d)
+  {\textbf{1. CoDEx-M dataset}\\ train: 185,584 triples\\ valid: 10,310 pos. / 10,310 neg.\\ test: 10,311 pos. / 10,311 neg.};
+\node[blk, right=of d] (g) {\textbf{2. Training graph and RDF/OWL ontology}\\ 17,050 entities, 51 relations};
+\node[blk, right=of g] (r) {\textbf{3. Rule mining and validation}\\ mined on training facts;\\ 160 rules kept after\\ validation review};
+\node[blk, below=12mm of r] (c) {\textbf{4. Candidate generation and V1/V2 ranking}\\ 184,487 candidates;\\ caps 100--1,000};
+\node[evl, left=of c] (s) {\textbf{5. Validation-based cap selection}\\ rule fixed in advance;\\ selected: cap 1,000, V2};
+\node[evl, left=of s] (t) {\textbf{6. Test evaluation}\\ precision, recall, F1,\\ positive hit rate};
+\node[blk, below=12mm of t] (v) {\textbf{7. Results and visualisation}\\ prediction explorer,\\ charts, cap dashboard};
+\node[fut, right=of v, text width=7.2cm] (f) {\textbf{Future work (not implemented):} ontology-aware scoring, wider rule coverage,
+  MRR/Hits@K ranking protocol, embedding baselines};
+\draw[arr] (d)--node[above,tag]{train}(g);
+\draw[arr] (g)--(r);
+\draw[arr] (r)--(c);
+\draw[arr] (c)--(s);
+\draw[arr] (s)--(t);
+\draw[arr] (t)--(v);
+\node[tag, above=0.5mm of r.north] {training + validation};
+\node[tag, above=0.5mm of s.north] {validation only};
+\node[tag, below=0.5mm of t.south east, anchor=north east] {test only};
+\end{tikzpicture}

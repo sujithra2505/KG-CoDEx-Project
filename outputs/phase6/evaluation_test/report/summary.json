@@ -1,0 +1,115 @@
+{
+  "source": "outputs/phase6/evaluation_test/evaluation_results.json",
+  "overall": {
+    "v1": {
+      "predictions": 3239,
+      "test_positives": 10311,
+      "test_negatives": 10311,
+      "tp_matched_positives": 257,
+      "fp_matched_supplied_negatives": 13,
+      "unlabelled_predictions": 2969,
+      "fn_unpredicted_positives": 10054,
+      "tn_unpredicted_negatives": 10298,
+      "precision": 0.951852,
+      "recall": 0.024925,
+      "f1": 0.048578,
+      "specificity": 0.998739,
+      "labelled_coverage": 0.083359,
+      "positive_hit_rate": 0.079345,
+      "recall_ceiling_under_cap": 0.239356,
+      "unlabelled_annotations": {
+        "in_valid_positives": 246,
+        "in_valid_negatives": 12,
+        "in_neither": 2711
+      },
+      "precision_wilson95": [
+        0.9194,
+        0.9716
+      ],
+      "positive_hit_rate_wilson95": [
+        0.0705,
+        0.0892
+      ]
+    },
+    "v2": {
+      "predictions": 3239,
+      "test_positives": 10311,
+      "test_negatives": 10311,
+      "tp_matched_positives": 278,
+      "fp_matched_supplied_negatives": 13,
+      "unlabelled_predictions": 2948,
+      "fn_unpredicted_positives": 10033,
+      "tn_unpredicted_negatives": 10298,
+      "precision": 0.955326,
+      "recall": 0.026961,
+      "f1": 0.052443,
+      "specificity": 0.998739,
+      "labelled_coverage": 0.089843,
+      "positive_hit_rate": 0.085829,
+      "recall_ceiling_under_cap": 0.239356,
+      "unlabelled_annotations": {
+        "in_valid_positives": 253,
+        "in_valid_negatives": 11,
+        "in_neither": 2684
+      },
+      "precision_wilson95": [
+        0.9251,
+        0.9737
+      ],
+      "positive_hit_rate_wilson95": [
+        0.0767,
+        0.096
+      ]
+    }
+  },
+  "overlap": {
+    "shared_predictions": 2830,
+    "v1_only": 409,
+    "v2_only": 409,
+    "v1_only_labels": {
+      "test_positive": 14,
+      "test_negative": 1,
+      "unlabelled": 394
+    },
+    "v2_only_labels": {
+      "test_positive": 35,
+      "test_negative": 1,
+      "unlabelled": 373
+    }
+  },
+  "coverage": {
+    "relations_in_benchmark_or_predictions": 44,
+    "relations_with_predictions": 33,
+    "relations_without_predictions": [
+      "P50",
+      "P57",
+      "P112",
+      "P138",
+      "P407",
+      "P641",
+      "P737",
+      "P740",
+      "P749",
+      "P1050",
+      "P2348"
+    ],
+    "test_positives_in_relations_without_predictions": 162,
+    "relations_at_cap_100": 32,
+    "test_positives_beyond_per_relation_cap": 7681,
+    "max_reachable_tp_under_cap": 2468
+  },
+  "top_relations_by_tp": {
+    "v1": {
+      "P26": 48,
+      "P530": 38,
+      "P3373": 31,
+      "P495": 24
+    },
+    "v2": {
+      "P26": 48,
+      "P530": 38,
+      "P3373": 31,
+      "P495": 24
+    }
+  }
+}

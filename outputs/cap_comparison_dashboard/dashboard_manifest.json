@@ -1,0 +1,33 @@
+{
+  "tool": "cap_dashboard_build.py",
+  "built_at": "2026-10-29T07:23:52+00:00",
+  "sources": [
+    {
+      "path": "outputs/cap_experiment/selection_rule.json",
+      "sha256": "75445f9b7410c69ebbdfcb0ede0bcc7bc22dd22fd6a8e139186d36ae879bfc73"
+    },
+    {
+      "path": "outputs/cap_experiment/selection.json",
+      "sha256": "69f25d3a24f66e3711bec8ed7082fcb250b9a853070e2f5d3667fd4de68d1565"
+    },
+    {
+      "path": "outputs/cap_experiment/validation/validation_results.json",
+      "sha256": "719b6de8e26b4f989ab5f2e22413e97070ede8acc6f275c0d561561478fbab8c"
+    },
+    {
+      "path": "outputs/phase6/evaluation_test/evaluation_results.json",
+      "sha256": "33e03405f4edc1d771d4002dcd8b2a08c83b03946f48f7534ada3dc6d8f44e94"
+    },
+    {
+      "path": "outputs/cap_experiment/test_final/test_results.json",
+      "sha256": "2e83eee362acb36524d03555e611450e8416304989083a10e555941e5941ecfc"
+    }
+  ],
+  "outputs": {
+    "index.html": "fab75f66ad02715ff959c972d85d1674314ca35f95dfc5dde0830af9adeff1e1",
+    "app.js": "ab22957461486709c8c4a887ca8b18939f0c0602b7fccaffefc15654ac590eca",
+    "app.css": "7bef94bcdadee8cd9bebbaa97d3ce7d4e107533e4fe4e217db8ca538d482cf8c",
+    "data/cap_results.js": "4af97fb74234e88581867d486d6bd3bd4a2bd122e1448472e6756df1050efea5"
+  },
+  "note": "All numbers come from the listed source files; the page contains none."
+}

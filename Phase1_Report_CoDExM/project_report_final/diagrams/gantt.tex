@@ -1,0 +1,28 @@
+% Gantt chart: seven tasks, Jul--Nov 2026 plus Future Work (editable pgfgantt, Draft 4 style)
+% Two title rows (months, week ranges). One unit = one week; Jul W1-4, Aug W5-8, Sep W9-12, Oct W13-16, Nov W17-20, Future Work W21-26.
+\begin{tikzpicture}
+\begin{ganttchart}[
+  hgrid style/.style={dotted, black!60}, vgrid={*1{dotted, black!40}},
+  x unit=0.36cm, y unit chart=0.62cm, y unit title=0.55cm,
+  title height=1, title label font=\scriptsize\bfseries,
+  bar label font=\footnotesize, bar label node/.append style={align=right},
+  bar height=0.55, bar top shift=0.22, inline=false,
+  link/.style={->, thick, black!60}]{1}{26}
+\gantttitle{Jul 2026}{4}\gantttitle{Aug}{4}\gantttitle{Sep}{4}\gantttitle{Oct}{4}\gantttitle{Nov}{4}\gantttitle{Future Work}{6}\\
+\gantttitle{W1--4}{4}\gantttitle{W5--8}{4}\gantttitle{W9--12}{4}\gantttitle{W13--16}{4}\gantttitle{W17--20}{4}\gantttitle{F1--F6}{6}\\
+\ganttbar[bar/.append style={fill=green!35, draw=green!50!black}]{1. Literature Review and Problem Formulation}{1}{15}\\
+\ganttbar[bar/.append style={fill=green!35, draw=green!50!black}]{2. Dataset Preparation and Analysis}{12}{15}
+  \ganttbar[bar/.append style={fill=green!55!black, draw=green!30!black}]{}{16}{16}\\
+\ganttbar[bar/.append style={fill=green!55!black, draw=green!30!black}]{3. Knowledge Graph and Ontology Construction}{15}{16}
+  \ganttbar[bar/.append style={fill=blue!30, draw=blue!60!black}]{}{21}{23}\\
+\ganttbar[bar/.append style={fill=green!55!black, draw=green!30!black}]{4. Rule Mining and Validation}{15}{16}
+  \ganttbar[bar/.append style={fill=blue!30, draw=blue!60!black}]{}{22}{24}\\
+\ganttbar[bar/.append style={fill=green!55!black, draw=green!30!black}]{5. Candidate Generation and Prediction Ranking}{15}{16}\\
+\ganttbar[bar/.append style={fill=green!55!black, draw=green!30!black}]{6. Experiments and Performance Evaluation}{16}{16}
+  \ganttbar[bar/.append style={fill=blue!30, draw=blue!60!black}]{}{23}{26}\\
+\ganttbar[bar/.append style={fill=yellow!80!orange, draw=orange!70!black}]{7. Report Preparation and Future Improvements}{15}{20}
+  \ganttbar[bar/.append style={fill=blue!30, draw=blue!60!black}]{}{24}{26}
+\end{ganttchart}
+% red rule: end of November 2026 (end of week slot 20)
+\draw[draw=red, line width=1.4pt] (7.2cm,0) -- (7.2cm,-5.44cm);
+\end{tikzpicture}

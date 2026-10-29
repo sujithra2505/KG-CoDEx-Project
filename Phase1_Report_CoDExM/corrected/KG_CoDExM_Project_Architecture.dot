@@ -1,0 +1,36 @@
+// Simplified architecture of the rule-based KG completion system on CoDEx-M (editable Graphviz source)
+// Render: dot -Tpng -Gdpi=220 KG_CoDExM_Project_Architecture.dot -o KG_CoDExM_Project_Architecture.png
+digraph ARCH {
+  graph [layout=neato, splines=line, fontname="Helvetica", pad=0.3];
+  node  [shape=box, style="filled", fontname="Helvetica", fontsize=14, fillcolor="#eaf2fc", color="#2a78d6", penwidth=1.6, margin="0.3,0.14", width=5.4];
+  edge  [color="#3d3d3a", penwidth=1.7, arrowsize=0.9, fontname="Helvetica", fontsize=12];
+
+  data [shape=plain, pos="0,8.3!", style="", label=<
+    <TABLE BORDER="1" COLOR="#7a7974" CELLBORDER="1" CELLSPACING="6" CELLPADDING="8" BGCOLOR="#f6f6f4">
+      <TR><TD COLSPAN="3" BORDER="0"><B><FONT POINT-SIZE="15">1. CoDEx-M Dataset</FONT></B></TD></TR>
+      <TR>
+        <TD PORT="tr" BGCOLOR="#dcecdc" COLOR="#008300"><B>Training split</B><BR/>185,584 triples</TD>
+        <TD PORT="va" BGCOLOR="#fff3d6" COLOR="#c98500"><B>Validation split</B><BR/>10,310 positives<BR/>10,310 negatives</TD>
+        <TD PORT="te" BGCOLOR="#fde3e3" COLOR="#e34948"><B>Test split</B><BR/>10,311 positives<BR/>10,311 negatives</TD>
+      </TR></TABLE>>];
+
+  b2 [pos="0,6.75!", label=<<B>2. Graph and Ontology Construction</B><BR/>training knowledge graph · RDF/OWL representation>];
+  b3 [pos="0,5.55!", label=<<B>3. Rule Mining and Validation</B><BR/>learn rules from training facts · review them on validation>];
+  b4 [pos="0,4.35!", label=<<B>4. Candidate Generation and Ranking</B><BR/>candidate triples · V1/V2 ranking · per-relation caps>];
+  b5 [pos="0,3.15!", label=<<B>5. Evaluation and Cap Selection</B><BR/>choose the cap on validation · final check on test>];
+  b6 [pos="0,1.95!", label=<<B>6. Results and Visualisation</B><BR/>prediction explorer · evaluation charts · cap dashboard>, fillcolor="#e9e6fb", color="#6250d6"];
+  fw [pos="0,0.55!", label=<<B>Future Work</B> (not implemented)<BR/>ontology-aware scoring · wider rule coverage<BR/>MRR / Hits@K ranking protocol · embedding baselines>, style="dashed", fillcolor="white", color="#7a7974", fontcolor="#52514e", width=5.4];
+
+  data:tr:s -> b2 [color="#008300", penwidth=2.2, label="  training only", fontcolor="#008300"];
+  b2 -> b3 -> b4 -> b5 -> b6;
+  node [shape=point, width=0.01, height=0.01, style=invis, label=""];
+  va0 [pos="-0.1,7.28!"]; v0 [pos="3.95,7.28!"]; v3 [pos="3.95,5.55!"]; v5 [pos="3.95,3.22!"];
+  te0 [pos="1.9,7.42!"]; t0 [pos="4.55,7.42!"]; t5 [pos="4.55,3.08!"];
+  edge [arrowhead=none, style=dashed, penwidth=2];
+  data:va:s -> va0 [color="#c98500"]; va0 -> v0 [color="#c98500"]; v0 -> v3 [color="#c98500"]; v3 -> v5 [color="#c98500"];
+  data:te:s -> te0 [color="#e34948"]; te0 -> t0 [color="#e34948"]; t0 -> t5 [color="#e34948"];
+  edge [arrowhead=normal];
+  v3 -> b3:e [headport=e, color="#c98500", xlabel="rule review", fontcolor="#a06a00"];
+  v5 -> b5:e [color="#c98500", xlabel="cap selection", fontcolor="#a06a00"];
+  t5 -> b5:e [color="#e34948", xlabel="final test", fontcolor="#c0392b"];
+}

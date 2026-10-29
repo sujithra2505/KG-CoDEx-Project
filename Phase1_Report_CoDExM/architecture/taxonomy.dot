@@ -1,0 +1,15 @@
+digraph T { rankdir=LR; nodesep=0.12; ranksep=0.35; pad=0.05;
+ node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, fillcolor="#eaf2fc", color="#2a78d6", margin="0.1,0.05"];
+ edge [color="#9a9994", arrowhead=none];
+ R [label="Missing-edge prediction\nin knowledge graphs\n43 unique papers", fillcolor="#f3f3f1", color="#52514e", fontsize=11];
+ t1 [label="1. Rule-based KGC and logical rule learning"]; p1 [label="AnyBURL [1], Evoda [2]†, Active KGC [3]", shape=plaintext, style=""]; s1 [label="Implemented", fillcolor="#dcecdc", color="#008300"];
+ t2 [label="2. Rule confidence and candidate-specific scoring"]; p2 [label="SLogic [4]†, probabilistic circuits [5]†", shape=plaintext, style=""]; s2 [label="Partly implemented", fillcolor="#fff3d6", color="#c98500"];
+ t3 [label="3. Ontology-based reasoning and semantic constraints"]; p3 [label="Logics–embeddings survey [6], OneSRPL [7],\nTransC [8], ontology framework [9]", shape=plaintext, style=""]; s3 [label="Ontology built; not in score", fillcolor="#fff3d6", color="#c98500"];
+ t4 [label="4. Explainable KG inference"]; p4 [label="EPR [10], responsible-AI paper [11]", shape=plaintext, style=""]; s4 [label="Implemented (path level)", fillcolor="#dcecdc", color="#008300"];
+ t5 [label="5. Neural-symbolic reasoning and differentiable rules"]; p5 [label="Neural LP [12]†, RNNLogic [13], NCRL [14],\nLNN [15], R-CQA [16]", shape=plaintext, style=""]; s5 [label="Not implemented (context)", fillcolor="white", color="#9a9994", style="rounded,dashed"];
+ t6 [label="6. Embeddings and link prediction"]; p6 [label="DistMult, ComplEx [17,18], RotatE [19],\ntranslation family [20–23]", shape=plaintext, style=""]; s6 [label="Not implemented (baselines planned)", fillcolor="white", color="#9a9994", style="rounded,dashed"];
+ t7 [label="7. Graph neural networks and advanced learning"]; p7 [label="GNN completion [24–27], reviews [28,29],\nqueries and applications [30–32]", shape=plaintext, style=""]; s7 [label="Not implemented (context)", fillcolor="white", color="#9a9994", style="rounded,dashed"];
+ t8 [label="8. Surveys, benchmarks and evaluation"]; p8 [label="Reasoning surveys [33–36], embedding surveys\n[37,38,39†,40–42], temporal [43]", shape=plaintext, style=""]; s8 [label="Evaluation protocol implemented", fillcolor="#fff3d6", color="#c98500"];
+ R -> t1; R -> t2; R -> t3; R -> t4; R -> t5; R -> t6; R -> t7; R -> t8;
+ t1->p1->s1; t2->p2->s2; t3->p3->s3; t4->p4->s4; t5->p5->s5; t6->p6->s6; t7->p7->s7; t8->p8->s8;
+}

@@ -1,0 +1,789 @@
+{
+  "source_file": "C:\\Users\\sugit\\OneDrive\\Desktop\\KG-Ontology-Rule-Based-Project\\data\\train.txt",
+  "source_sha256": "d99c3437ab51690391a26d96976adf6e5494dba7ef6902e77000551bfa566556",
+  "original_training_rows": 185584,
+  "valid_rows_before_deduplication": 185584,
+  "malformed_rows": 0,
+  "exact_duplicate_rows": 0,
+  "unique_valid_triples": 185584,
+  "graph_edges": 185584,
+  "graph_nodes": 17050,
+  "relation_types": 51,
+  "relation_frequencies": [
+    {
+      "relation_id": "P106",
+      "label": "occupation",
+      "count": 64345,
+      "example_triple": [
+        "Q314924",
+        "P106",
+        "Q33999"
+      ],
+      "example_display": "Anthony Edwards (Q314924) -- occupation (P106) --> actor (Q33999)"
+    },
+    {
+      "relation_id": "P27",
+      "label": "country of citizenship",
+      "count": 15169,
+      "example_triple": [
+        "Q78514",
+        "P27",
+        "Q268970"
+      ],
+      "example_display": "Franz Werfel (Q78514) -- country of citizenship (P27) --> Republic of German-Austria (Q268970)"
+    },
+    {
+      "relation_id": "P1412",
+      "label": "languages spoken, written, or signed",
+      "count": 11352,
+      "example_triple": [
+        "Q43977",
+        "P1412",
+        "Q397"
+      ],
+      "example_display": "Jan Hus (Q43977) -- languages spoken, written, or signed (P1412) --> Latin (Q397)"
+    },
+    {
+      "relation_id": "P136",
+      "label": "genre",
+      "count": 10621,
+      "example_triple": [
+        "Q253978",
+        "P136",
+        "Q1054574"
+      ],
+      "example_display": "Dirty Dancing (Q253978) -- genre (P136) --> romance film (Q1054574)"
+    },
+    {
+      "relation_id": "P463",
+      "label": "member of",
+      "count": 10340,
+      "example_triple": [
+        "Q1041",
+        "P463",
+        "Q7809"
+      ],
+      "example_display": "Senegal (Q1041) -- member of (P463) --> UNESCO (Q7809)"
+    },
+    {
+      "relation_id": "P69",
+      "label": "educated at",
+      "count": 8772,
+      "example_triple": [
+        "Q234579",
+        "P69",
+        "Q182973"
+      ],
+      "example_display": "Flannery O'Connor (Q234579) -- educated at (P69) --> University of Iowa (Q182973)"
+    },
+    {
+      "relation_id": "P161",
+      "label": "cast member",
+      "count": 8366,
+      "example_triple": [
+        "Q108946",
+        "P161",
+        "Q39792"
+      ],
+      "example_display": "A Few Good Men (Q108946) -- cast member (P161) --> Jack Nicholson (Q39792)"
+    },
+    {
+      "relation_id": "P19",
+      "label": "place of birth",
+      "count": 6470,
+      "example_triple": [
+        "Q78514",
+        "P19",
+        "Q1085"
+      ],
+      "example_display": "Franz Werfel (Q78514) -- place of birth (P19) --> Prague (Q1085)"
+    },
+    {
+      "relation_id": "P530",
+      "label": "diplomatic relation",
+      "count": 5626,
+      "example_triple": [
+        "Q1032",
+        "P530",
+        "Q142"
+      ],
+      "example_display": "Niger (Q1032) -- diplomatic relation (P530) --> France (Q142)"
+    },
+    {
+      "relation_id": "P1303",
+      "label": "instrument",
+      "count": 5462,
+      "example_triple": [
+        "Q206112",
+        "P1303",
+        "Q6607"
+      ],
+      "example_display": "Willie Nelson (Q206112) -- instrument (P1303) --> guitar (Q6607)"
+    },
+    {
+      "relation_id": "P20",
+      "label": "place of death",
+      "count": 4872,
+      "example_triple": [
+        "Q344179",
+        "P20",
+        "Q19660"
+      ],
+      "example_display": "Panait Istrati (Q344179) -- place of death (P20) --> Bucharest (Q19660)"
+    },
+    {
+      "relation_id": "P108",
+      "label": "employer",
+      "count": 4301,
+      "example_triple": [
+        "Q65084",
+        "P108",
+        "Q154561"
+      ],
+      "example_display": "Johann Samuel Ersch (Q65084) -- employer (P108) --> University of Jena (Q154561)"
+    },
+    {
+      "relation_id": "P264",
+      "label": "record label",
+      "count": 3104,
+      "example_triple": [
+        "Q49735",
+        "P264",
+        "Q216364"
+      ],
+      "example_display": "Johnny Nash (Q49735) -- record label (P264) --> Epic (Q216364)"
+    },
+    {
+      "relation_id": "P509",
+      "label": "cause of death",
+      "count": 2898,
+      "example_triple": [
+        "Q1260",
+        "P509",
+        "Q181754"
+      ],
+      "example_display": "Kurt Waldheim (Q1260) -- cause of death (P509) --> heart failure (Q181754)"
+    },
+    {
+      "relation_id": "P102",
+      "label": "member of political party",
+      "count": 2399,
+      "example_triple": [
+        "Q1322959",
+        "P102",
+        "Q79854"
+      ],
+      "example_display": "Nikolai Shchelokov (Q1322959) -- member of political party (P102) --> Communist Party of the Soviet Union (Q79854)"
+    },
+    {
+      "relation_id": "P140",
+      "label": "religion",
+      "count": 2397,
+      "example_triple": [
+        "Q312995",
+        "P140",
+        "Q7066"
+      ],
+      "example_display": "Bruce Sterling (Q312995) -- religion (P140) --> atheism (Q7066)"
+    },
+    {
+      "relation_id": "P101",
+      "label": "field of work",
+      "count": 2156,
+      "example_triple": [
+        "Q246497",
+        "P101",
+        "Q41217"
+      ],
+      "example_display": "Mstislav Keldysh (Q246497) -- field of work (P101) --> mechanics (Q41217)"
+    },
+    {
+      "relation_id": "P172",
+      "label": "ethnic group",
+      "count": 2054,
+      "example_triple": [
+        "Q188093",
+        "P172",
+        "Q49085"
+      ],
+      "example_display": "Langston Hughes (Q188093) -- ethnic group (P172) --> African Americans (Q49085)"
+    },
+    {
+      "relation_id": "P495",
+      "label": "country of origin",
+      "count": 1842,
+      "example_triple": [
+        "Q246997",
+        "P495",
+        "Q30"
+      ],
+      "example_display": "Before Night Falls (Q246997) -- country of origin (P495) --> United States of America (Q30)"
+    },
+    {
+      "relation_id": "P119",
+      "label": "place of burial",
+      "count": 1790,
+      "example_triple": [
+        "Q274297",
+        "P119",
+        "Q311"
+      ],
+      "example_display": "Édouard Drumont (Q274297) -- place of burial (P119) --> Père Lachaise Cemetery (Q311)"
+    },
+    {
+      "relation_id": "P551",
+      "label": "residence",
+      "count": 1741,
+      "example_triple": [
+        "Q236958",
+        "P551",
+        "Q60"
+      ],
+      "example_display": "Katherine Anne Porter (Q236958) -- residence (P551) --> New York City (Q60)"
+    },
+    {
+      "relation_id": "P737",
+      "label": "influenced by",
+      "count": 1381,
+      "example_triple": [
+        "Q106740",
+        "P737",
+        "Q210740"
+      ],
+      "example_display": "Dorothy L. Sayers (Q106740) -- influenced by (P737) --> Wilkie Collins (Q210740)"
+    },
+    {
+      "relation_id": "P840",
+      "label": "narrative location",
+      "count": 1348,
+      "example_triple": [
+        "Q308681",
+        "P840",
+        "Q739"
+      ],
+      "example_display": "Lord of War (Q308681) -- narrative location (P840) --> Colombia (Q739)"
+    },
+    {
+      "relation_id": "P17",
+      "label": "country",
+      "count": 1176,
+      "example_triple": [
+        "Q654283",
+        "P17",
+        "Q30"
+      ],
+      "example_display": "Def Jam Recordings (Q654283) -- country (P17) --> United States of America (Q30)"
+    },
+    {
+      "relation_id": "P26",
+      "label": "spouse",
+      "count": 772,
+      "example_triple": [
+        "Q7516",
+        "P26",
+        "Q13909"
+      ],
+      "example_display": "Jonny Lee Miller (Q7516) -- spouse (P26) --> Angelina Jolie (Q13909)"
+    },
+    {
+      "relation_id": "P3373",
+      "label": "sibling",
+      "count": 707,
+      "example_triple": [
+        "Q7729",
+        "P3373",
+        "Q151098"
+      ],
+      "example_display": "Louis Bonaparte (Q7729) -- sibling (P3373) --> Lucien Bonaparte (Q151098)"
+    },
+    {
+      "relation_id": "P57",
+      "label": "director",
+      "count": 497,
+      "example_triple": [
+        "Q325077",
+        "P57",
+        "Q57391"
+      ],
+      "example_display": "1½ Knights – In Search of the Ravishing Princess Herzelinde (Q325077) -- director (P57) --> Til Schweiger (Q57391)"
+    },
+    {
+      "relation_id": "P135",
+      "label": "movement",
+      "count": 404,
+      "example_triple": [
+        "Q47221",
+        "P135",
+        "Q377616"
+      ],
+      "example_display": "Taxi Driver (Q47221) -- movement (P135) --> New Hollywood (Q377616)"
+    },
+    {
+      "relation_id": "P641",
+      "label": "sport",
+      "count": 391,
+      "example_triple": [
+        "Q631722",
+        "P641",
+        "Q5372"
+      ],
+      "example_display": "Bobbito García (Q631722) -- sport (P641) --> basketball (Q5372)"
+    },
+    {
+      "relation_id": "P37",
+      "label": "official language",
+      "count": 373,
+      "example_triple": [
+        "Q1352",
+        "P37",
+        "Q5885"
+      ],
+      "example_display": "Chennai (Q1352) -- official language (P37) --> Tamil (Q5885)"
+    },
+    {
+      "relation_id": "P1050",
+      "label": "medical condition",
+      "count": 360,
+      "example_triple": [
+        "Q395274",
+        "P1050",
+        "Q11085"
+      ],
+      "example_display": "Michael J. Fox (Q395274) -- medical condition (P1050) --> Parkinson disease (Q11085)"
+    },
+    {
+      "relation_id": "P30",
+      "label": "continent",
+      "count": 359,
+      "example_triple": [
+        "Q902",
+        "P30",
+        "Q48"
+      ],
+      "example_display": "Bangladesh (Q902) -- continent (P30) --> Asia (Q48)"
+    },
+    {
+      "relation_id": "P451",
+      "label": "unmarried partner",
+      "count": 358,
+      "example_triple": [
+        "Q191088",
+        "P451",
+        "Q26876"
+      ],
+      "example_display": "Joe Jonas (Q191088) -- unmarried partner (P451) --> Taylor Swift (Q26876)"
+    },
+    {
+      "relation_id": "P40",
+      "label": "child",
+      "count": 357,
+      "example_triple": [
+        "Q127330",
+        "P40",
+        "Q127548"
+      ],
+      "example_display": "Frank Zappa (Q127330) -- child (P40) --> Dweezil Zappa (Q127548)"
+    },
+    {
+      "relation_id": "P131",
+      "label": "located in the administrative terroritorial entity",
+      "count": 184,
+      "example_triple": [
+        "Q1127387",
+        "P131",
+        "Q90"
+      ],
+      "example_display": "Conservatoire national supérieur d'art dramatique (Q1127387) -- located in the administrative terroritorial entity (P131) --> Paris (Q90)"
+    },
+    {
+      "relation_id": "P159",
+      "label": "headquarters location",
+      "count": 156,
+      "example_triple": [
+        "Q4827652",
+        "P159",
+        "Q65"
+      ],
+      "example_display": "Avang Music (Q4827652) -- headquarters location (P159) --> Los Angeles (Q65)"
+    },
+    {
+      "relation_id": "P361",
+      "label": "part of",
+      "count": 151,
+      "example_triple": [
+        "Q878",
+        "P361",
+        "Q7204"
+      ],
+      "example_display": "United Arab Emirates (Q878) -- part of (P361) --> Middle East (Q7204)"
+    },
+    {
+      "relation_id": "P2348",
+      "label": "time period",
+      "count": 131,
+      "example_triple": [
+        "Q1167000",
+        "P2348",
+        "Q6939"
+      ],
+      "example_display": "Daryl Palumbo (Q1167000) -- time period (P2348) --> 21st century (Q6939)"
+    },
+    {
+      "relation_id": "P740",
+      "label": "location of formation",
+      "count": 123,
+      "example_triple": [
+        "Q162586",
+        "P740",
+        "Q1384"
+      ],
+      "example_display": "Dream Theater (Q162586) -- location of formation (P740) --> New York (Q1384)"
+    },
+    {
+      "relation_id": "P749",
+      "label": "parent organization",
+      "count": 76,
+      "example_triple": [
+        "Q2338889",
+        "P749",
+        "Q38903"
+      ],
+      "example_display": "MCA Records (Q2338889) -- parent organization (P749) --> Universal Music Group (Q38903)"
+    },
+    {
+      "relation_id": "P112",
+      "label": "founded by",
+      "count": 61,
+      "example_triple": [
+        "Q1194456",
+        "P112",
+        "Q62766"
+      ],
+      "example_display": "Roc Nation (Q1194456) -- founded by (P112) --> Jay-Z (Q62766)"
+    },
+    {
+      "relation_id": "P138",
+      "label": "named after",
+      "count": 51,
+      "example_triple": [
+        "Q12548",
+        "P138",
+        "Q2277"
+      ],
+      "example_display": "Holy Roman Empire (Q12548) -- named after (P138) --> Roman Empire (Q2277)"
+    },
+    {
+      "relation_id": "P407",
+      "label": "language of work or name",
+      "count": 41,
+      "example_triple": [
+        "Q1137404",
+        "P407",
+        "Q150"
+      ],
+      "example_display": "L'Humanité (Q1137404) -- language of work or name (P407) --> French (Q150)"
+    },
+    {
+      "relation_id": "P452",
+      "label": "industry",
+      "count": 17,
+      "example_triple": [
+        "Q56760250",
+        "P452",
+        "Q746359"
+      ],
+      "example_display": "Sony Music (Q56760250) -- industry (P452) --> music industry (Q746359)"
+    },
+    {
+      "relation_id": "P50",
+      "label": "author",
+      "count": 16,
+      "example_triple": [
+        "Q26162388",
+        "P50",
+        "Q63699"
+      ],
+      "example_display": "Duch Německa (Q26162388) -- author (P50) --> Eduard Mörike (Q63699)"
+    },
+    {
+      "relation_id": "P2283",
+      "label": "uses",
+      "count": 9,
+      "example_triple": [
+        "Q200572",
+        "P2283",
+        "Q568723"
+      ],
+      "example_display": "I, Robot (Q200572) -- uses (P2283) --> MASSIVE (Q568723)"
+    },
+    {
+      "relation_id": "P3095",
+      "label": "practiced by",
+      "count": 2,
+      "example_triple": [
+        "Q9268",
+        "P3095",
+        "Q7325"
+      ],
+      "example_display": "Judaism (Q9268) -- practiced by (P3095) --> Jewish people (Q7325)"
+    },
+    {
+      "relation_id": "P54",
+      "label": "member of sports team",
+      "count": 2,
+      "example_triple": [
+        "Q182455",
+        "P54",
+        "Q928"
+      ],
+      "example_display": "Wilt Chamberlain (Q182455) -- member of sports team (P54) --> Philippines (Q928)"
+    },
+    {
+      "relation_id": "P1056",
+      "label": "product or material produced",
+      "count": 2,
+      "example_triple": [
+        "Q3001888",
+        "P1056",
+        "Q638"
+      ],
+      "example_display": "Sony BMG (Q3001888) -- product or material produced (P1056) --> music (Q638)"
+    },
+    {
+      "relation_id": "P113",
+      "label": "airline hub",
+      "count": 1,
+      "example_triple": [
+        "Q215392",
+        "P113",
+        "Q220"
+      ],
+      "example_display": "Norwegian Air Shuttle (Q215392) -- airline hub (P113) --> Rome (Q220)"
+    },
+    {
+      "relation_id": "P780",
+      "label": "symptoms",
+      "count": 1,
+      "example_triple": [
+        "Q84263196",
+        "P780",
+        "Q767485"
+      ],
+      "example_display": "COVID-19 (Q84263196) -- symptoms (P780) --> respiratory failure (Q767485)"
+    }
+  ],
+  "repeated_two_hop_path_observations": [
+    {
+      "first_relation_id": "P27",
+      "first_relation_label": "country of citizenship",
+      "second_relation_id": "P530",
+      "second_relation_label": "diplomatic relation",
+      "observed_training_paths": 1425045,
+      "shared_entity_id": "Q1000",
+      "shared_entity_label": "Gabon",
+      "first_triple": [
+        "Q193676",
+        "P27",
+        "Q1000"
+      ],
+      "second_triple": [
+        "Q1000",
+        "P530",
+        "Q142"
+      ],
+      "first_display": "Ludacris (Q193676) -- country of citizenship (P27) --> Gabon (Q1000)",
+      "second_display": "Gabon (Q1000) -- diplomatic relation (P530) --> France (Q142)"
+    },
+    {
+      "first_relation_id": "P27",
+      "first_relation_label": "country of citizenship",
+      "second_relation_id": "P463",
+      "second_relation_label": "member of",
+      "observed_training_paths": 339698,
+      "shared_entity_id": "Q1000",
+      "shared_entity_label": "Gabon",
+      "first_triple": [
+        "Q193676",
+        "P27",
+        "Q1000"
+      ],
+      "second_triple": [
+        "Q1000",
+        "P463",
+        "Q1043527"
+      ],
+      "first_display": "Ludacris (Q193676) -- country of citizenship (P27) --> Gabon (Q1000)",
+      "second_display": "Gabon (Q1000) -- member of (P463) --> Multilateral Investment Guarantee Agency (Q1043527)"
+    },
+    {
+      "first_relation_id": "P530",
+      "first_relation_label": "diplomatic relation",
+      "second_relation_id": "P530",
+      "second_relation_label": "diplomatic relation",
+      "observed_training_paths": 334763,
+      "shared_entity_id": "Q1000",
+      "shared_entity_label": "Gabon",
+      "first_triple": [
+        "Q142",
+        "P530",
+        "Q1000"
+      ],
+      "second_triple": [
+        "Q1000",
+        "P530",
+        "Q142"
+      ],
+      "first_display": "France (Q142) -- diplomatic relation (P530) --> Gabon (Q1000)",
+      "second_display": "Gabon (Q1000) -- diplomatic relation (P530) --> France (Q142)"
+    },
+    {
+      "first_relation_id": "P495",
+      "first_relation_label": "country of origin",
+      "second_relation_id": "P530",
+      "second_relation_label": "diplomatic relation",
+      "observed_training_paths": 235245,
+      "shared_entity_id": "Q142",
+      "shared_entity_label": "France",
+      "first_triple": [
+        "Q1044328",
+        "P495",
+        "Q142"
+      ],
+      "second_triple": [
+        "Q142",
+        "P530",
+        "Q1000"
+      ],
+      "first_display": "L'Obs (Q1044328) -- country of origin (P495) --> France (Q142)",
+      "second_display": "France (Q142) -- diplomatic relation (P530) --> Gabon (Q1000)"
+    },
+    {
+      "first_relation_id": "P530",
+      "first_relation_label": "diplomatic relation",
+      "second_relation_id": "P463",
+      "second_relation_label": "member of",
+      "observed_training_paths": 107316,
+      "shared_entity_id": "Q1000",
+      "shared_entity_label": "Gabon",
+      "first_triple": [
+        "Q142",
+        "P530",
+        "Q1000"
+      ],
+      "second_triple": [
+        "Q1000",
+        "P463",
+        "Q1043527"
+      ],
+      "first_display": "France (Q142) -- diplomatic relation (P530) --> Gabon (Q1000)",
+      "second_display": "Gabon (Q1000) -- member of (P463) --> Multilateral Investment Guarantee Agency (Q1043527)"
+    },
+    {
+      "first_relation_id": "P17",
+      "first_relation_label": "country",
+      "second_relation_id": "P530",
+      "second_relation_label": "diplomatic relation",
+      "observed_training_paths": 65980,
+      "shared_entity_id": "Q142",
+      "shared_entity_label": "France",
+      "first_triple": [
+        "Q1017",
+        "P17",
+        "Q142"
+      ],
+      "second_triple": [
+        "Q142",
+        "P530",
+        "Q1000"
+      ],
+      "first_display": "Aachen (Q1017) -- country (P17) --> France (Q142)",
+      "second_display": "France (Q142) -- diplomatic relation (P530) --> Gabon (Q1000)"
+    },
+    {
+      "first_relation_id": "P495",
+      "first_relation_label": "country of origin",
+      "second_relation_id": "P463",
+      "second_relation_label": "member of",
+      "observed_training_paths": 52374,
+      "shared_entity_id": "Q142",
+      "shared_entity_label": "France",
+      "first_triple": [
+        "Q1044328",
+        "P495",
+        "Q142"
+      ],
+      "second_triple": [
+        "Q142",
+        "P463",
+        "Q1065"
+      ],
+      "first_display": "L'Obs (Q1044328) -- country of origin (P495) --> France (Q142)",
+      "second_display": "France (Q142) -- member of (P463) --> United Nations (Q1065)"
+    },
+    {
+      "first_relation_id": "P161",
+      "first_relation_label": "cast member",
+      "second_relation_id": "P106",
+      "second_relation_label": "occupation",
+      "observed_training_paths": 44153,
+      "shared_entity_id": "Q100440",
+      "shared_entity_label": "Larry Hagman",
+      "first_triple": [
+        "Q213053",
+        "P161",
+        "Q100440"
+      ],
+      "second_triple": [
+        "Q100440",
+        "P106",
+        "Q10800557"
+      ],
+      "first_display": "Superman (Q213053) -- cast member (P161) --> Larry Hagman (Q100440)",
+      "second_display": "Larry Hagman (Q100440) -- occupation (P106) --> film actor (Q10800557)"
+    },
+    {
+      "first_relation_id": "P27",
+      "first_relation_label": "country of citizenship",
+      "second_relation_id": "P30",
+      "second_relation_label": "continent",
+      "observed_training_paths": 27311,
+      "shared_entity_id": "Q1000",
+      "shared_entity_label": "Gabon",
+      "first_triple": [
+        "Q193676",
+        "P27",
+        "Q1000"
+      ],
+      "second_triple": [
+        "Q1000",
+        "P30",
+        "Q15"
+      ],
+      "first_display": "Ludacris (Q193676) -- country of citizenship (P27) --> Gabon (Q1000)",
+      "second_display": "Gabon (Q1000) -- continent (P30) --> Africa (Q15)"
+    },
+    {
+      "first_relation_id": "P27",
+      "first_relation_label": "country of citizenship",
+      "second_relation_id": "P37",
+      "second_relation_label": "official language",
+      "observed_training_paths": 19000,
+      "shared_entity_id": "Q1000",
+      "shared_entity_label": "Gabon",
+      "first_triple": [
+        "Q193676",
+        "P27",
+        "Q1000"
+      ],
+      "second_triple": [
+        "Q1000",
+        "P37",
+        "Q150"
+      ],
+      "first_display": "Ludacris (Q193676) -- country of citizenship (P27) --> Gabon (Q1000)",
+      "second_display": "Gabon (Q1000) -- official language (P37) --> French (Q150)"
+    }
+  ],
+  "graph_type": "NetworkX MultiDiGraph",
+  "construction_scope": "train.txt only; no inferred edges"
+}

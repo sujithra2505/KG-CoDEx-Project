@@ -1,0 +1,12 @@
+{
+  "tool": "cap_experiment.py",
+  "version": "1.0.0",
+  "generated_at": "2026-10-29T07:21:53+00:00",
+  "approved_by_flag": "--i-approve-cap-test-evaluation",
+  "selection_sha256": "69f25d3a24f66e3711bec8ed7082fcb250b9a853070e2f5d3667fd4de68d1565",
+  "predictions_sha256": "759a1d60c35df41f198f63fb1729debac43378318262ee5e9b170c99d2192397",
+  "outputs": {
+    "test_results.json": "2e83eee362acb36524d03555e611450e8416304989083a10e555941e5941ecfc",
+    "per_relation_metrics.csv": "60b404006ad25c68b9b16610392afe9b002a72954ff2d414ee8f4ad83d275e93"
+  }
+}

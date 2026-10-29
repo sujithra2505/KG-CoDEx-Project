@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoDEx-M prediction explorer</title>
+<link rel="stylesheet" href="lib/vis-network.css">
+<link rel="stylesheet" href="app.css">
+<script>
+  /* Record any page script that fails to load, so app.js can show it instead of a blank page. */
+  window.UI_FAILED_ASSETS = [];
+  window.uiAssetFailed = function (el) { window.UI_FAILED_ASSETS.push(el.getAttribute("src")); };
+</script>
+</head>
+<body>
+<header>
+  <h1>CoDEx-M prediction explorer</h1>
+  <p class="warn">Predicted edges are <b>hypotheses</b> produced by statistical rules from the training graph (Phase 5, one round).
+  A higher score is a rule statistic (Wilson lower bound), <b>not proof</b> that a triple is true.</p>
+  <nav id="tabs">
+    <button data-tab="graph" class="active">Graph</button>
+    <button data-tab="table">Prediction table</button>
+    <button data-tab="compare">v1 vs v2</button>
+    <button data-tab="evaluation">Phase 6 evaluation</button>
+  </nav>
+</header>
+<div id="load-status" class="banner" role="status">Loading prediction data…</div>
+
+<section id="filters">
+  <label>Version <select id="f-version">
+    <option value="all">v1 and v2 (separate rows)</option><option value="v1">v1 only</option>
+    <option value="v2">v2 only</option><option value="both">in both versions</option></select></label>
+  <label>Relation <select id="f-relation"><option value="">all relations</option></select></label>
+  <label>Score <input id="f-min" type="number" min="0" max="1" step="0.05" value="0"> to
+    <input id="f-max" type="number" min="0" max="1" step="0.05" value="1"></label>
+  <label>Top <select id="f-top"><option value="">all ranks</option><option>10</option><option>25</option><option>50</option><option>100</option></select> per relation</label>
+  <label>Text <input id="f-query" placeholder="ID or label"></label>
+  <span class="entity-search"><label>Entity <input id="f-entity" placeholder="search ID or name" autocomplete="off"></label>
+    <span id="entity-chip"></span><ul id="entity-suggest" role="listbox"></ul></span>
+</section>
+
+<main>
+  <section id="tab-graph" class="tab active">
+    <div class="legend">
+      <span><i class="line solid"></i>training fact (from the Phase 2 training graph)</span>
+      <span><i class="line dashed high"></i>predicted, score &ge; 0.7</span>
+      <span><i class="line dashed mid"></i>predicted, 0.4&ndash;0.7</span>
+      <span><i class="line dashed low"></i>predicted, &lt; 0.4</span>
+      <span>Thicker dashed line = higher score. Pick an entity to see its training and predicted edges.</span>
+    </div>
+    <div id="graph-status" class="status"></div>
+    <div class="graph-wrap"><div id="graph"></div>
+      <aside id="detail"><p class="muted">Click a dashed (predicted) edge or a table row to see its provenance.</p></aside></div>
+  </section>
+
+  <section id="tab-table" class="tab">
+    <div id="table-status" class="status"></div>
+    <table class="data" id="pred-table"><thead><tr>
+      <th data-sort="subject">Subject</th><th data-sort="relation">Relation</th><th data-sort="object">Object</th>
+      <th data-sort="version">Version</th><th data-sort="score">Score</th><th data-sort="rank">Rank in relation</th>
+      <th data-sort="nrules">Rules</th><th data-sort="evidence">Evidence matches</th><th>Provenance</th></tr></thead><tbody></tbody></table>
+    <div class="pager" id="table-pager"></div>
+  </section>
+
+  <section id="tab-compare" class="tab">
+    <div id="compare-summary" class="cards"></div>
+    <div class="compare-controls">Show:
+      <select id="c-class"><option value="v1_only">only in v1 (dropped in v2)</option><option value="v2_only">only in v2 (added in v2)</option>
+        <option value="rank_changed">in both, rank changed</option><option value="both">in both</option></select></div>
+    <table class="data" id="compare-table"><thead><tr><th>Subject</th><th>Relation</th><th>Object</th><th>Score</th><th>v1 rank</th><th>v2 rank</th><th>Evidence matches</th><th>Rules</th></tr></thead><tbody></tbody></table>
+    <div class="pager" id="compare-pager"></div>
+    <h3>Per relation</h3>
+    <table class="data" id="compare-relations"><thead><tr><th>Relation</th><th>v1</th><th>v2</th><th>Both</th><th>Only v1</th><th>Only v2</th><th>Rank changed</th><th>Score distribution v1</th><th>Score distribution v2</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section id="tab-evaluation" class="tab">
+    <div id="eval-root"></div>
+  </section>
+</main>
+
+<script src="filters.js" onerror="uiAssetFailed(this)"></script>
+<script src="lib/vis-network.js" onerror="uiAssetFailed(this)"></script>
+<script src="app.js" onerror="uiAssetFailed(this)"></script>
+<script src="data/index.js" onerror="uiAssetFailed(this)"></script>
+<script>
+  /* Fallback if app.js itself is missing: otherwise app.js replaces this message. */
+  window.addEventListener("load", function () {
+    if (document.body.dataset.uiState) return;
+    var el = document.getElementById("load-status");
+    el.className = "banner error";
+    el.textContent = "The page script app.js did not load (" + (window.UI_FAILED_ASSETS.join(", ") || "unknown reason") +
+      "). Open outputs/prediction_ui/index.html, or run `py -m http.server 8000` in the project folder and open " +
+      "http://localhost:8000/outputs/prediction_ui/index.html";
+  });
+</script>
+</body>
+</html>
